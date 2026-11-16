@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Austin Remodeling Portfolio | ZM Home Improvements</title>
+  <meta name="description" content="Recent kitchen, bathroom, and addition remodeling projects in Austin, TX by ZM Home Improvements.">
+  <meta name="theme-color" content="#0B1220">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Austin Remodeling Portfolio | ZM Home Improvements">
+  <meta property="og:description" content="Recent kitchen, bathroom, and addition remodeling projects in Austin, TX by ZM Home Improvements.">
+  <meta property="og:image" content="./assets/hero.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" type="image/png" href="./assets/unnamed.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: '#0B1220',
+            night: '#070D17',
+            mist: '#F6F4EF',
+            gold: { DEFAULT: '#C9A96B', light: '#E6D3A8', dark: '#9C7C45' }
+          },
+          fontFamily: {
+            sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+            display: ['Fraunces', 'ui-serif', 'Georgia', 'serif']
+          },
+          boxShadow: {
+            card: '0 24px 60px -28px rgba(11, 18, 32, 0.28)'
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+
+  <style>
+    ::selection { background: rgba(201, 169, 107, 0.35); }
+
+    .reviews-swiper { overflow: hidden; padding: 0.25rem 0 1rem; scrollbar-width: none; -ms-overflow-style: none; }
+    .reviews-swiper::-webkit-scrollbar { display: none; }
+    .reviews-swiper .swiper-slide {
+      width: 86%;
+      height: 400px;
+      opacity: 0.5;
+      transform: scale(0.9);
+      filter: blur(4px);
+      transition: opacity 500ms ease, transform 500ms ease, filter 500ms ease;
+    }
+    .reviews-swiper .swiper-slide blockquote p {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 8;
+      overflow: hidden;
+    }
+    .reviews-swiper .swiper-slide-active {
+      opacity: 1;
+      transform: scale(1);
+      filter: blur(0);
+      box-shadow: 0 24px 60px -28px rgba(11, 18, 32, 0.28);
+    }
+    @media (min-width: 640px) {
+      .reviews-swiper .swiper-slide { height: 440px; }
+      .reviews-swiper .swiper-slide blockquote p { -webkit-line-clamp: 9; }
+    }
+    @media (min-width: 768px) { .reviews-swiper .swiper-slide { width: 46%; } }
+    @media (min-width: 1024px) { .reviews-swiper .swiper-slide { width: calc((100% - 48px) / 3); } }
+
+    .hero-word { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.12em; margin-bottom: -0.12em; }
+    .hero-word-inner { display: inline-block; will-change: transform; }
+
+    .hero-btn { position: relative; isolation: isolate; overflow: hidden; transition: transform 350ms ease, box-shadow 350ms ease, background-color 350ms ease, border-color 350ms ease; }
+    .hero-btn:hover { transform: translateY(-2px); }
+    .hero-btn:active { transform: translateY(0) scale(0.99); }
+    .hero-btn-primary::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      background: linear-gradient(110deg, transparent 25%, rgba(255, 255, 255, 0.55) 50%, transparent 75%);
+      transform: translateX(-130%);
+      transition: transform 750ms ease;
+    }
+    .hero-btn-primary:hover { box-shadow: 0 18px 36px -16px rgba(201, 169, 107, 0.65); }
+    .hero-btn-primary:hover::after { transform: translateX(130%); }
+    .hero-arrow, .hero-phone-icon { transition: transform 350ms ease; }
+    .hero-btn-primary:hover .hero-arrow { transform: translateX(3px); }
+    .hero-btn-secondary:hover .hero-phone-icon { transform: rotate(-9deg) scale(1.08); }
+
+    @keyframes hero-fade-up {
+      from { opacity: 0; transform: translateY(18px); filter: blur(6px); }
+      to { opacity: 1; transform: translateY(0); filter: blur(0); }
+    }
+    @keyframes hero-word-in {
+      from { opacity: 0; transform: translateY(110%); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes hero-shimmer {
+      from { background-position: 200% center; }
+      to { background-position: -100% center; }
+    }
+    @keyframes hero-star-pop {
+      0% { opacity: 0; transform: scale(0.4) rotate(-15deg); }
+      70% { transform: scale(1.15) rotate(3deg); }
+      100% { opacity: 1; transform: scale(1) rotate(0); }
+    }
+    @keyframes hero-line-grow {
+      from { transform: scaleX(0); }
+      to { transform: scaleX(1); }
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .hero-reveal {
+        opacity: 0;
+        transform: translateY(18px);
+        filter: blur(6px);
+        animation: hero-fade-up 900ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        animation-delay: var(--d, 0ms);
+      }
+      .hero-word-inner {
+        opacity: 0;
+        transform: translateY(110%);
+        animation: hero-word-in 900ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        animation-delay: var(--d, 0ms);
+      }
+      .hero-shimmer {
+        background: linear-gradient(100deg, #C9A96B 18%, #F2E3BD 36%, #C9A96B 54%, #E6D3A8 72%, #C9A96B 90%);
+        background-size: 220% auto;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: hero-word-in 900ms cubic-bezier(0.22, 1, 0.36, 1) forwards, hero-shimmer 7s linear 1.4s infinite;
+        animation-delay: var(--d, 0ms), 1.4s;
+      }
+      .hero-stars svg {
+        opacity: 0;
+        transform: scale(0.4) rotate(-15deg);
+        animation: hero-star-pop 550ms cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+      }
+      .hero-stars svg:nth-child(1) { animation-delay: 1050ms; }
+      .hero-stars svg:nth-child(2) { animation-delay: 1120ms; }
+      .hero-stars svg:nth-child(3) { animation-delay: 1190ms; }
+      .hero-stars svg:nth-child(4) { animation-delay: 1260ms; }
+      .hero-stars svg:nth-child(5) { animation-delay: 1330ms; }
+      .hero-line { transform-origin: left; animation: hero-line-grow 800ms cubic-bezier(0.22, 1, 0.36, 1) 150ms forwards; }
+    }
+
+    @media (max-width: 1023.98px) {
+      .mobile-menu {
+        display: grid;
+        grid-template-rows: 0fr;
+        opacity: 0;
+        visibility: hidden;
+        transition: grid-template-rows 300ms cubic-bezier(0.4, 0, 0.2, 1), opacity 260ms ease, visibility 0s linear 300ms;
+      }
+      .mobile-menu.is-open {
+        grid-template-rows: 1fr;
+        opacity: 1;
+        visibility: visible;
+        transition: grid-template-rows 300ms cubic-bezier(0.4, 0, 0.2, 1), opacity 260ms ease, visibility 0s;
+      }
+      .mobile-menu > div { min-height: 0; overflow: hidden; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+      .reviews-swiper .swiper-slide { opacity: 1; transform: none; filter: none; }
+      .mobile-menu { transition: none; }
+      .hero-btn:hover, .hero-btn:active { transform: none; }
+      .hero-btn-primary::after { display: none; }
+      .hero-shimmer { -webkit-text-fill-color: currentColor; background: none; }
+    }
+  </style>
+  <noscript>
+    <style>
+      [data-reveal] { opacity: 1 !important; transform: none !important; }
+      .reviews-swiper { overflow: visible; }
+      .reviews-swiper .swiper-wrapper { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+      .reviews-swiper .swiper-slide { width: 100% !important; opacity: 1 !important; transform: none !important; filter: none !important; }
+    </style>
+  </noscript>
+</head>
+<body class="bg-white font-sans text-slate-900 antialiased">
+
+  <span class="hidden opacity-100 translate-y-0" aria-hidden="true"></span>
+
+  <svg xmlns="http://www.w3.org/2000/svg" class="hidden" aria-hidden="true">
+    <symbol id="icon-star" viewBox="0 0 20 20"><path fill="currentColor" d="M10 1.5l2.6 5.27 5.82.85-4.21 4.1.99 5.79L10 14.78l-5.2 2.73.99-5.79L1.58 7.62l5.82-.85L10 1.5z"/></symbol>
+    <symbol id="icon-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+    <symbol id="icon-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m5 12 4.5 4.5L19 7"/></symbol>
+    <symbol id="icon-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="M4.5 5.5a2 2 0 0 1 2-2h1.3a1.5 1.5 0 0 1 1.45 1.12l.7 2.8a1.5 1.5 0 0 1-.42 1.47l-1.03 1a13.4 13.4 0 0 0 5.62 5.62l1-1.03a1.5 1.5 0 0 1 1.47-.42l2.8.7A1.5 1.5 0 0 1 20.5 16.2v1.3a2 2 0 0 1-2 2C10.4 19.5 4.5 13.6 4.5 5.5Z"/></symbol>
+    <symbol id="icon-mail" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="M3.5 6.5h17v11h-17v-11Zm0 0 8.5 6.5 8.5-6.5"/></symbol>
+    <symbol id="icon-instagram" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor"/></symbol>
+    <symbol id="icon-menu" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="icon-close" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="m6 6 12 12M18 6 6 18"/></symbol>
+    <symbol id="icon-chevron" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="m6 9 6 6 6-6"/></symbol>
+    <symbol id="icon-pin" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="M12 21s7-6 7-11a7 7 0 1 0-14 0c0 5 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5" fill="none" stroke="currentColor" stroke-width="1.7"/></symbol>
+  </svg>
+
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-full focus:bg-gold focus:px-5 focus:py-3 focus:text-sm focus:font-semibold focus:text-ink">
+    Skip to content
+  </a>
+
+  <header id="top" class="sticky top-0 z-50 border-b border-white/10 bg-ink/90 backdrop-blur-md">
+    <div class="mx-auto max-w-7xl px-5 lg:px-8">
+      <div class="flex h-20 items-center justify-between gap-6">
+        <a href="index.html" class="flex items-center" aria-label="ZM Home Improvements home">
+          <img src="./assets/unnamed.png" alt="" width="108" height="108" class="h-14 w-14 shrink-0 sm:h-16 sm:w-16">
+        </a>
+
+        <nav class="hidden items-center gap-6 lg:flex" aria-label="Main">
+          <a href="index.html" class="text-sm font-medium text-white/75 transition hover:text-white">Home</a>
+          <a href="services.html" class="text-sm font-medium text-white/75 transition hover:text-white">Services</a>
+          <a href="portfolio.html" class="text-sm font-medium text-white/75 transition hover:text-white">Portfolio</a>
+          <a href="about.html" class="text-sm font-medium text-white/75 transition hover:text-white">About Us</a>
+          <a href="contact.html" class="text-sm font-medium text-white/75 transition hover:text-white">Contact</a>
+        </nav>
+
+        <div class="flex items-center gap-3">
+          <a href="contact.html#contact-form" class="inline-flex items-center gap-2 rounded-full bg-gold px-5 py-3 text-sm font-semibold text-ink transition hover:bg-gold-light focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold">
+            Get a Quote
+          </a>
+          <button id="menu-toggle" type="button" class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/15 text-white transition hover:bg-white/10 lg:hidden" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+            <svg id="icon-menu-open" class="h-5 w-5" aria-hidden="true"><use href="#icon-menu"/></svg>
+            <svg id="icon-menu-close" class="hidden h-5 w-5" aria-hidden="true"><use href="#icon-close"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="mobile-menu lg:hidden" aria-hidden="true" inert>
+      <div>
+        <div class="border-t border-white/10 bg-ink px-5 pb-6 pt-3">
+          <nav class="flex flex-col gap-1" aria-label="Mobile">
+            <a href="index.html" class="rounded-lg px-3 py-3 text-base font-medium text-white/80 transition hover:bg-white/5 hover:text-white">Home</a>
+            <a href="services.html" class="rounded-lg px-3 py-3 text-base font-medium text-white/80 transition hover:bg-white/5 hover:text-white">Services</a>
+            <a href="portfolio.html" class="rounded-lg px-3 py-3 text-base font-medium text-white/80 transition hover:bg-white/5 hover:text-white">Portfolio</a>
+            <a href="about.html" class="rounded-lg px-3 py-3 text-base font-medium text-white/80 transition hover:bg-white/5 hover:text-white">About Us</a>
+            <a href="contact.html" class="rounded-lg px-3 py-3 text-base font-medium text-white/80 transition hover:bg-white/5 hover:text-white">Contact</a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="relative isolate overflow-hidden bg-ink text-white">
+      <div class="mx-auto max-w-7xl px-5 py-24 sm:py-32 lg:px-8 lg:py-40">
+        <h1 class="hero-reveal max-w-4xl font-display text-4xl font-light tracking-tight sm:text-5xl lg:text-6xl" style="--d: 120ms">Our Portfolio</h1>
+        <p class="hero-reveal mt-5 max-w-2xl text-base leading-7 text-white/70 sm:text-lg" style="--d: 220ms">Kitchen, bathroom, and addition projects across Austin, TX.</p>
+      </div>
+    </section>
+
+    <section class="bg-white py-24 sm:py-32 lg:py-40">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+        <div data-reveal class="opacity-0 translate-y-8 transition-all duration-700 ease-out">
+          <h2 class="font-display text-3xl font-light tracking-tight text-ink sm:text-4xl lg:text-5xl">Austin Remodeling Projects</h2>
+        </div>
+
+        <div data-reveal class="mt-12 flex flex-wrap items-center gap-2 opacity-0 translate-y-8 transition-all duration-700 ease-out" role="group" aria-label="Filter projects">
+            <button type="button" data-filter="all" aria-pressed="true" class="rounded-full border border-ink/15 bg-white px-5 py-2.5 text-sm font-semibold text-ink transition hover:border-ink/35 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold aria-pressed:border-ink aria-pressed:bg-ink aria-pressed:text-white">All</button>
+            <button type="button" data-filter="kitchens" aria-pressed="false" class="rounded-full border border-ink/15 bg-white px-5 py-2.5 text-sm font-semibold text-ink transition hover:border-ink/35 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold aria-pressed:border-ink aria-pressed:bg-ink aria-pressed:text-white">Kitchens</button>
+            <button type="button" data-filter="bathrooms" aria-pressed="false" class="rounded-full border border-ink/15 bg-white px-5 py-2.5 text-sm font-semibold text-ink transition hover:border-ink/35 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold aria-pressed:border-ink aria-pressed:bg-ink aria-pressed:text-white">Bathrooms</button>
+            <button type="button" data-filter="additions" aria-pressed="false" class="rounded-full border border-ink/15 bg-white px-5 py-2.5 text-sm font-semibold text-ink transition hover:border-ink/35 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold aria-pressed:border-ink aria-pressed:bg-ink aria-pressed:text-white">Additions</button>
+        </div>
+
+        <div id="gallery" data-reveal class="mt-12 columns-1 gap-6 opacity-0 translate-y-8 transition-all duration-700 ease-out sm:columns-2 lg:columns-3" aria-label="Project gallery">
+          <figure class="gallery-item mb-5 break-inside-avoid" data-category="kitchens">
+            <div class="group relative aspect-[4/3] overflow-hidden rounded-2xl bg-ink">
+              <div class="absolute inset-0 flex flex-col items-center justify-center gap-3" aria-hidden="true">
+                <img src="./assets/unnamed.png" alt="" width="108" height="108" class="h-12 w-12 opacity-80">
+                <span class="text-[10px] font-semibold uppercase tracking-[0.24em] text-white/40">Project photo</span>
+              </div>
+              <img src="./assets/port-1.jpg" alt="Remodeled Austin kitchen with white cabinetry, quartz counters, and tile backsplash" width="1200" height="900" loading="lazy" class="gallery-img absolute inset-0 z-[1] h-full w-full object-cover transition duration-700 ease-out group-hover:scale-[1.03]">
+              <div class="absolute inset-x-0 bottom-0 z-[2] bg-gradient-to-t from-ink/95 via-ink/60 to-transparent p-5 pt-16">
+                <p class="text-[10px] font-semibold uppercase tracking-[0.22em] text-gold">Kitchens</p>
+                <h3 class="mt-1 font-display text-xl text-white">Crestview Kitchen Refresh</h3>
+              </div>
+            </div>
+          </figure>
+          <figure class="gallery-item mb-5 break-inside-avoid" data-category="bathrooms">
+            <div class="group relative aspect-[4/5] overflow-hidden rounded-2xl bg-ink">
+              <div class="absolute inset-0 flex flex-col items-center justify-center gap-3" aria-hidden="true">
+                <img src="./assets/unnamed.png" alt="" width="108" height="108" class="h-12 w-12 opacity-80">
+                <span class="text-[10px] font-semibold uppercase tracking-[0.24em] text-white/40">Project photo</span>
+              </div>
+              <img src="./assets/port-2.jpg" alt="Austin bathroom remodel with a walk-in shower and custom tile work" width="1200" height="900" loading="lazy" class="gallery-img absolute inset-0 z-[1] h-full w-full object-cover transition duration-700 ease-out group-hover:scale-[1.03]">
+              <div class="absolute inset-x-0 bottom-0 z-[2] bg-gradient-to-t from-ink/95 via-ink/60 to-transparent p-5 pt-16">
+                <p class="text-[10px] font-semibold uppercase tracking-[0.22em] text-gold">Bathrooms</p>
+                <h3 class="mt-1 font-display text-xl text-white">Spa Bath & Walk-In Shower</h3>
+              </div>
+            </div>
+          </figure>
+          <figure class="gallery-item mb-5 break-inside-avoid" data-category="additions">
+            <div class="group relative aspect-[4/3] overflow-hidden rounded-2xl bg-ink">
+              <div class="absolute inset-0 flex flex-col items-center justify-center gap-3" aria-hidden="true">
+                <img src="./assets/unnamed.png" alt="" width="108" height="108" class="h-12 w-12 opacity-80">
+                <span class="text-[10px] font-semibold uppercase tracking-[0.24em] text-white/40">Project photo</span>
+              </div>
+              <img src="./assets/port-3.jpg" alt="Custom 16 by 20 studio and music space built in Austin" width="1200" height="900" loading="lazy" class="gallery-img absolute inset-0 z-[1] h-full w-full object-cover transition duration-700 ease-out group-hover:scale-[1.03]">
+              <div class="absolute inset-x-0 bottom-0 z-[2] bg-gradient-to-t from-ink/95 via-ink/60 to-transparent p-5 pt-16">
+                <p class="text-[10px] font-semibold uppercase tracking-[0.22em] text-gold">Additions</p>
+                <h3 class="mt-1 font-display text-xl text-white">16 × 20 Studio & Music Space</h3>
+              </div>
+            </div>
+          </figure>
+          <figure class="gallery-item mb-5 break-inside-avoid" data-category="kitchens">
+            <div class="group relative aspect-square overflow-hidden rounded-2xl bg-ink">
+              <div class="absolute inset-0 flex flex-col items-center justify-center gap-3" aria-hidden="true">
+                <img src="./assets/unnamed.png" alt="" width="108" height="108" class="h-12 w-12 opacity-80">
+                <span class="text-[10px] font-semibold uppercase tracking-[0.24em] text-white/40">Project photo</span>
+              </div>
+              <img src="./assets/port-4.jpg" alt="Austin kitchen renovation with a quartz island and custom cabinetry" width="1200" height="900" loading="lazy" class="gallery-img absolute inset-0 z-[1] h-full w-full object-cover transition duration-700 ease-out group-hover:scale-[1.03]">
+              <div class="absolute inset-x-0 bottom-0 z-[2] bg-gradient-to-t from-ink/95 via-ink/60 to-transparent p-5 pt-16">
+                <p class="text-[10px] font-semibold uppercase tracking-[0.22em] text-gold">Kitchens</p>
+                <h3 class="mt-1 font-display text-xl text-white">Quartz Island Kitchen</h3>
+              </div>
+            </div>
+          </figure>
+          <figure class="gallery-item mb-5 break-inside-avoid" data-category="bathrooms">
+            <div class="group relative aspect-[4/3] overflow-hidden rounded-2xl bg-ink">
+              <div class="absolute inset-0 flex flex-col items-center justify-center gap-3" aria-hidden="true">
+                <img src="./assets/unnamed.png" alt="" width="108" height="108" class="h-12 w-12 opacity-80">
+                <span class="text-[10px] font-semibold uppercase tracking-[0.24em] text-white/40">Project photo</span>
+              </div>
+              <img src="./assets/port-5.jpg" alt="Bathroom renovation with a freestanding soaking tub and mosaic tile" width="1200" height="900" loading="lazy" class="gallery-img absolute inset-0 z-[1] h-full w-full object-cover transition duration-700 ease-out group-hover:scale-[1.03]">
+              <div class="absolute inset-x-0 bottom-0 z-[2] bg-gradient-to-t from-ink/95 via-ink/60 to-transparent p-5 pt-16">
+                <p class="text-[10px] font-semibold uppercase tracking-[0.22em] text-gold">Bathrooms</p>
+                <h3 class="mt-1 font-display text-xl text-white">Freestanding Tub Retreat</h3>
+              </div>
+            </div>
+          </figure>
+          <figure class="gallery-item mb-5 break-inside-avoid" data-category="additions">
+            <div class="group relative aspect-[4/5] overflow-hidden rounded-2xl bg-ink">
+              <div class="absolute inset-0 flex flex-col items-center justify-center gap-3" aria-hidden="true">
+                <img src="./assets/unnamed.png" alt="" width="108" height="108" class="h-12 w-12 opacity-80">
+                <span class="text-[10px] font-semibold uppercase tracking-[0.24em] text-white/40">Project photo</span>
+              </div>
+              <img src="./assets/port-6.jpg" alt="Open-concept living room addition with hardwood floors" width="1200" height="900" loading="lazy" class="gallery-img absolute inset-0 z-[1] h-full w-full object-cover transition duration-700 ease-out group-hover:scale-[1.03]">
+              <div class="absolute inset-x-0 bottom-0 z-[2] bg-gradient-to-t from-ink/95 via-ink/60 to-transparent p-5 pt-16">
+                <p class="text-[10px] font-semibold uppercase tracking-[0.22em] text-gold">Additions</p>
+                <h3 class="mt-1 font-display text-xl text-white">Open-Concept Living Addition</h3>
+              </div>
+            </div>
+          </figure>
+          <figure class="gallery-item mb-5 break-inside-avoid" data-category="kitchens">
+            <div class="group relative aspect-[4/3] overflow-hidden rounded-2xl bg-ink">
+              <div class="absolute inset-0 flex flex-col items-center justify-center gap-3" aria-hidden="true">
+                <img src="./assets/unnamed.png" alt="" width="108" height="108" class="h-12 w-12 opacity-80">
+                <span class="text-[10px] font-semibold uppercase tracking-[0.24em] text-white/40">Project photo</span>
+              </div>
+              <img src="./assets/port-7.jpg" alt="Kitchen remodel for an Austin rental property" width="1200" height="900" loading="lazy" class="gallery-img absolute inset-0 z-[1] h-full w-full object-cover transition duration-700 ease-out group-hover:scale-[1.03]">
+              <div class="absolute inset-x-0 bottom-0 z-[2] bg-gradient-to-t from-ink/95 via-ink/60 to-transparent p-5 pt-16">
+                <p class="text-[10px] font-semibold uppercase tracking-[0.22em] text-gold">Kitchens</p>
+                <h3 class="mt-1 font-display text-xl text-white">Rental Kitchen Remodel</h3>
+              </div>
+            </div>
+          </figure>
+          <figure class="gallery-item mb-5 break-inside-avoid" data-category="bathrooms">
+            <div class="group relative aspect-square overflow-hidden rounded-2xl bg-ink">
+              <div class="absolute inset-0 flex flex-col items-center justify-center gap-3" aria-hidden="true">
+                <img src="./assets/unnamed.png" alt="" width="108" height="108" class="h-12 w-12 opacity-80">
+                <span class="text-[10px] font-semibold uppercase tracking-[0.24em] text-white/40">Project photo</span>
+              </div>
+              <img src="./assets/port-8.jpg" alt="Bathroom renovation with a double vanity and updated lighting" width="1200" height="900" loading="lazy" class="gallery-img absolute inset-0 z-[1] h-full w-full object-cover transition duration-700 ease-out group-hover:scale-[1.03]">
+              <div class="absolute inset-x-0 bottom-0 z-[2] bg-gradient-to-t from-ink/95 via-ink/60 to-transparent p-5 pt-16">
+                <p class="text-[10px] font-semibold uppercase tracking-[0.22em] text-gold">Bathrooms</p>
+                <h3 class="mt-1 font-display text-xl text-white">Double Vanity Renovation</h3>
+              </div>
+            </div>
+          </figure>
+          <figure class="gallery-item mb-5 break-inside-avoid" data-category="additions">
+            <div class="group relative aspect-[4/3] overflow-hidden rounded-2xl bg-ink">
+              <div class="absolute inset-0 flex flex-col items-center justify-center gap-3" aria-hidden="true">
+                <img src="./assets/unnamed.png" alt="" width="108" height="108" class="h-12 w-12 opacity-80">
+                <span class="text-[10px] font-semibold uppercase tracking-[0.24em] text-white/40">Project photo</span>
+              </div>
+              <img src="./assets/port-9.jpg" alt="Custom carport and covered patio addition in Austin" width="1200" height="900" loading="lazy" class="gallery-img absolute inset-0 z-[1] h-full w-full object-cover transition duration-700 ease-out group-hover:scale-[1.03]">
+              <div class="absolute inset-x-0 bottom-0 z-[2] bg-gradient-to-t from-ink/95 via-ink/60 to-transparent p-5 pt-16">
+                <p class="text-[10px] font-semibold uppercase tracking-[0.22em] text-gold">Additions</p>
+                <h3 class="mt-1 font-display text-xl text-white">Carport & Covered Patio</h3>
+              </div>
+            </div>
+          </figure>
+        </div>
+
+      </div>
+    </section>
+    <section class="bg-ink py-24 text-white sm:py-28">
+      <div data-reveal class="mx-auto max-w-3xl px-5 text-center opacity-0 translate-y-8 transition-all duration-700 ease-out">
+        <h2 class="font-display text-3xl font-light tracking-tight sm:text-4xl">Ready to Start Your Austin Remodeling Project?</h2>
+        <a href="contact.html#contact-form" class="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-gold px-8 py-4 text-sm font-semibold text-ink transition hover:bg-gold-light focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold">
+          Get a Quote
+          <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-arrow"/></svg>
+        </a>
+      </div>
+    </section>
+  </main>
+
+<nav class="fixed inset-x-0 bottom-0 z-50 border-t border-ink/10 bg-white/95 px-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] pt-3 shadow-[0_-8px_30px_-12px_rgba(11,18,32,0.25)] backdrop-blur md:hidden" aria-label="Quick contact">
+    <div class="mx-auto flex max-w-md gap-3">
+      <a href="tel:+15125601400" class="flex flex-1 items-center justify-center gap-2 rounded-xl border border-ink/15 bg-white px-4 py-3 text-sm font-semibold text-ink shadow-sm transition active:scale-[0.99]">
+        <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-phone"/></svg>
+        Call Now
+      </a>
+      <a href="contact.html#contact-form" class="flex flex-1 items-center justify-center gap-2 rounded-xl bg-gold px-4 py-3 text-sm font-semibold text-ink shadow-sm transition hover:bg-gold-light active:scale-[0.99]">
+        Get Quote
+        <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-arrow"/></svg>
+      </a>
+    </div>
+  </nav>
+
+<footer class="bg-night text-white/60">
+    <div class="mx-auto max-w-7xl px-5 pt-16 pb-32 md:py-16 lg:px-8">
+      <div class="grid gap-12 md:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1.3fr]">
+        <div>
+          <a href="index.html" class="flex items-center gap-3" aria-label="ZM Home Improvements home">
+            <img src="./assets/unnamed.png" alt="" width="108" height="108" class="h-12 w-12 shrink-0">
+            <span class="leading-tight">
+              <span class="block font-display text-lg text-white">Home Improvements</span>
+              <span class="block text-[10px] uppercase tracking-[0.28em] text-white/50">Austin, Texas</span>
+            </span>
+          </a>
+          <p class="mt-5 max-w-xs text-sm leading-6">
+            Thoughtful kitchen and bathroom remodels, custom additions, and home improvements, built for Austin living.
+          </p>
+          <div class="mt-5 flex items-center gap-2">
+            <span class="flex gap-0.5 text-gold" role="img" aria-label="5 out of 5 stars">
+              <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-star"/></svg>
+              <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-star"/></svg>
+              <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-star"/></svg>
+              <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-star"/></svg>
+              <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-star"/></svg>
+            </span>
+            <span class="text-xs font-medium text-white/50">5.0 on Google &middot; 40+ reviews</span>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="text-xs font-semibold uppercase tracking-[0.2em] text-white/50">Explore</h2>
+          <ul class="mt-4 space-y-3 text-sm">
+            <li><a href="index.html" class="transition hover:text-white">Home</a></li>
+            <li><a href="services.html" class="transition hover:text-white">Services</a></li>
+            <li><a href="portfolio.html" class="transition hover:text-white">Portfolio</a></li>
+            <li><a href="about.html" class="transition hover:text-white">About Us</a></li>
+            <li><a href="contact.html" class="transition hover:text-white">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="text-xs font-semibold uppercase tracking-[0.2em] text-white/50">Services</h2>
+          <ul class="mt-4 space-y-3 text-sm">
+            <li><a href="services.html#kitchens" class="transition hover:text-white">Kitchen remodeling</a></li>
+            <li><a href="services.html#bathrooms" class="transition hover:text-white">Bathroom renovations</a></li>
+            <li><a href="services.html#additions" class="transition hover:text-white">Custom additions</a></li>
+            <li><a href="services.html" class="transition hover:text-white">Whole-home improvements</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="text-xs font-semibold uppercase tracking-[0.2em] text-white/50">Contact</h2>
+          <ul class="mt-4 space-y-3 text-sm">
+            <li>
+              <a href="tel:+15125601400" class="flex items-center gap-3 transition hover:text-white">
+                <svg class="h-4 w-4 shrink-0 text-gold" aria-hidden="true"><use href="#icon-phone"/></svg>
+                (512) 560-1400
+              </a>
+            </li>
+            <li>
+              <a href="mailto:zmsocialmediamarketing26@gmail.com" class="flex items-start gap-3 transition hover:text-white">
+                <svg class="mt-0.5 h-4 w-4 shrink-0 text-gold" aria-hidden="true"><use href="#icon-mail"/></svg>
+                <span>info@zmhomeimprovements.com</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/zm.clientshowcase/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 transition hover:text-white">
+                <svg class="h-4 w-4 shrink-0 text-gold" aria-hidden="true"><use href="#icon-instagram"/></svg>
+                @zm.clientshowcase
+              </a>
+            </li>
+            <li class="flex items-center gap-3">
+              <svg class="h-4 w-4 shrink-0 text-gold" aria-hidden="true"><use href="#icon-check"/></svg>
+              Austin, TX &amp; surrounding areas
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-12 flex flex-col gap-3 border-t border-white/10 pt-6 text-xs sm:flex-row sm:items-center sm:justify-between">
+        <p>&copy; <span id="year">2026</span> ZM Home Improvements LLC. All rights reserved.</p>
+        <p>Serving Austin and the surrounding communities.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuButton = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const openIcon = document.getElementById('icon-menu-open');
+    const closeIcon = document.getElementById('icon-menu-close');
+
+    function setMenu(open) {
+      menuButton.setAttribute('aria-expanded', String(open));
+      menuButton.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      mobileMenu.classList.toggle('is-open', open);
+      mobileMenu.setAttribute('aria-hidden', String(!open));
+      mobileMenu.toggleAttribute('inert', !open);
+      openIcon.classList.toggle('hidden', open);
+      closeIcon.classList.toggle('hidden', !open);
+    }
+
+    menuButton.addEventListener('click', () => {
+      setMenu(menuButton.getAttribute('aria-expanded') !== 'true');
+    });
+
+    mobileMenu.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => setMenu(false));
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && menuButton.getAttribute('aria-expanded') === 'true') {
+        setMenu(false);
+        menuButton.focus();
+      }
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const revealItems = document.querySelectorAll('[data-reveal]');
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (revealItems.length) {
+      if ('IntersectionObserver' in window && !prefersReducedMotion) {
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.remove('opacity-0', 'translate-y-8');
+            entry.target.classList.add('opacity-100', 'translate-y-0');
+            observer.unobserve(entry.target);
+          });
+        }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+        revealItems.forEach((item) => revealObserver.observe(item));
+      } else {
+        revealItems.forEach((item) => {
+          item.classList.remove('opacity-0', 'translate-y-8');
+          item.classList.add('opacity-100', 'translate-y-0');
+        });
+      }
+    }
+
+
+    const filterButtons = document.querySelectorAll('[data-filter]');
+    const galleryItems = document.querySelectorAll('#gallery [data-category]');
+
+    filterButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        filterButtons.forEach((item) => item.setAttribute('aria-pressed', String(item === button)));
+        const filter = button.dataset.filter;
+        galleryItems.forEach((item) => {
+          const show = filter === 'all' || item.dataset.category === filter;
+          item.classList.toggle('hidden', !show);
+        });
+      });
+    });
+
+    document.querySelectorAll('.gallery-img').forEach((img) => {
+      const hideMissing = () => img.classList.add('hidden');
+      if (img.complete && img.naturalWidth === 0) hideMissing();
+      img.addEventListener('error', hideMissing);
+    });
+
+  </script>
+</body>
+</html>

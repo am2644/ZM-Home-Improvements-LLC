@@ -1,0 +1,271 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-ink: #0B1220;
+  --color-night: #070D17;
+  --color-mist: #F6F4EF;
+  --color-gold: #C9A96B;
+  --color-gold-light: #E6D3A8;
+  --color-gold-dark: #9C7C45;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
+  --shadow-card: 0 24px 60px -28px rgba(11, 18, 32, 0.28);
+}
+
+::selection {
+  background: rgba(201, 169, 107, 0.35);
+}
+
+.reviews-swiper {
+  overflow: hidden;
+  padding: 0.25rem 0 1rem;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.reviews-swiper::-webkit-scrollbar {
+  display: none;
+}
+.reviews-swiper .swiper-slide {
+  width: 86%;
+  height: 400px;
+  opacity: 0.5;
+  transform: scale(0.9);
+  filter: blur(4px);
+  transition: opacity 500ms ease, transform 500ms ease, filter 500ms ease;
+}
+.reviews-swiper .swiper-slide blockquote p {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 8;
+  overflow: hidden;
+}
+.reviews-swiper .swiper-slide-active {
+  opacity: 1;
+  transform: scale(1);
+  filter: blur(0);
+  box-shadow: 0 24px 60px -28px rgba(11, 18, 32, 0.28);
+}
+@media (min-width: 640px) {
+  .reviews-swiper .swiper-slide {
+    height: 440px;
+  }
+  .reviews-swiper .swiper-slide blockquote p {
+    -webkit-line-clamp: 9;
+  }
+}
+@media (min-width: 768px) {
+  .reviews-swiper .swiper-slide {
+    width: 46%;
+  }
+}
+@media (min-width: 1024px) {
+  .reviews-swiper .swiper-slide {
+    width: calc((100% - 48px) / 3);
+  }
+}
+
+.hero-word {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  padding-bottom: 0.12em;
+  margin-bottom: -0.12em;
+}
+.hero-word-inner {
+  display: inline-block;
+  will-change: transform;
+}
+
+.hero-btn {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  transition: transform 350ms ease, box-shadow 350ms ease, background-color 350ms ease, border-color 350ms ease;
+}
+.hero-btn:hover {
+  transform: translateY(-2px);
+}
+.hero-btn:active {
+  transform: translateY(0) scale(0.99);
+}
+.hero-btn-primary::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(110deg, transparent 25%, rgba(255, 255, 255, 0.55) 50%, transparent 75%);
+  transform: translateX(-130%);
+  transition: transform 750ms ease;
+}
+.hero-btn-primary:hover {
+  box-shadow: 0 18px 36px -16px rgba(201, 169, 107, 0.65);
+}
+.hero-btn-primary:hover::after {
+  transform: translateX(130%);
+}
+.hero-arrow,
+.hero-phone-icon {
+  transition: transform 350ms ease;
+}
+.hero-btn-primary:hover .hero-arrow {
+  transform: translateX(3px);
+}
+.hero-btn-secondary:hover .hero-phone-icon {
+  transform: rotate(-9deg) scale(1.08);
+}
+
+@keyframes hero-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+    filter: blur(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+@keyframes hero-word-in {
+  from {
+    opacity: 0;
+    transform: translateY(110%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes hero-shimmer {
+  from {
+    background-position: 200% center;
+  }
+  to {
+    background-position: -100% center;
+  }
+}
+@keyframes hero-star-pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.4) rotate(-15deg);
+  }
+  70% {
+    transform: scale(1.15) rotate(3deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+  }
+}
+@keyframes hero-line-grow {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    filter: blur(6px);
+    animation: hero-fade-up 900ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    animation-delay: var(--d, 0ms);
+  }
+  .hero-word-inner {
+    opacity: 0;
+    transform: translateY(110%);
+    animation: hero-word-in 900ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    animation-delay: var(--d, 0ms);
+  }
+  .hero-shimmer {
+    background: linear-gradient(100deg, #C9A96B 18%, #F2E3BD 36%, #C9A96B 54%, #E6D3A8 72%, #C9A96B 90%);
+    background-size: 220% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: hero-word-in 900ms cubic-bezier(0.22, 1, 0.36, 1) forwards,
+      hero-shimmer 7s linear 1.4s infinite;
+    animation-delay: var(--d, 0ms), 1.4s;
+  }
+  .hero-stars svg {
+    opacity: 0;
+    transform: scale(0.4) rotate(-15deg);
+    animation: hero-star-pop 550ms cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  }
+  .hero-stars svg:nth-child(1) {
+    animation-delay: 1050ms;
+  }
+  .hero-stars svg:nth-child(2) {
+    animation-delay: 1120ms;
+  }
+  .hero-stars svg:nth-child(3) {
+    animation-delay: 1190ms;
+  }
+  .hero-stars svg:nth-child(4) {
+    animation-delay: 1260ms;
+  }
+  .hero-stars svg:nth-child(5) {
+    animation-delay: 1330ms;
+  }
+  .hero-line {
+    transform-origin: left;
+    animation: hero-line-grow 800ms cubic-bezier(0.22, 1, 0.36, 1) 150ms forwards;
+  }
+}
+
+@media (max-width: 1023.98px) {
+  .mobile-menu {
+    display: grid;
+    grid-template-rows: 0fr;
+    opacity: 0;
+    visibility: hidden;
+    transition: grid-template-rows 300ms cubic-bezier(0.4, 0, 0.2, 1), opacity 260ms ease,
+      visibility 0s linear 300ms;
+  }
+  .mobile-menu.is-open {
+    grid-template-rows: 1fr;
+    opacity: 1;
+    visibility: visible;
+    transition: grid-template-rows 300ms cubic-bezier(0.4, 0, 0.2, 1), opacity 260ms ease,
+      visibility 0s;
+  }
+  .mobile-menu > div {
+    min-height: 0;
+    overflow: hidden;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+  .reviews-swiper .swiper-slide {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+  .mobile-menu {
+    transition: none;
+  }
+  .hero-btn:hover,
+  .hero-btn:active {
+    transform: none;
+  }
+  .hero-btn-primary::after {
+    display: none;
+  }
+  .hero-shimmer {
+    -webkit-text-fill-color: currentColor;
+    background: none;
+  }
+}

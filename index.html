@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kitchen &amp; Bathroom Remodeling in Austin, TX | ZM Home Improvements</title>
+  <meta name="description" content="Top-rated kitchen and bathroom remodeling in Austin, TX. Owner-led custom additions, clear communication, and a 5.0 Google rating. Get a free quote.">
+  <meta name="theme-color" content="#0B1220">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Kitchen &amp; Bathroom Remodeling in Austin, TX | ZM Home Improvements">
+  <meta property="og:description" content="Top-rated kitchen and bathroom remodeling in Austin, TX. Owner-led custom additions, clear communication, and a 5.0 Google rating. Get a free quote.">
+  <meta property="og:image" content="./assets/hero.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" type="image/png" href="./assets/unnamed.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: '#0B1220',
+            night: '#070D17',
+            mist: '#F6F4EF',
+            gold: { DEFAULT: '#C9A96B', light: '#E6D3A8', dark: '#9C7C45' }
+          },
+          fontFamily: {
+            sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+            display: ['Fraunces', 'ui-serif', 'Georgia', 'serif']
+          },
+          boxShadow: {
+            card: '0 24px 60px -28px rgba(11, 18, 32, 0.28)'
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+
+  <style>
+    ::selection { background: rgba(201, 169, 107, 0.35); }
+
+    .reviews-swiper { overflow: hidden; padding: 0.25rem 0 1rem; scrollbar-width: none; -ms-overflow-style: none; }
+    .reviews-swiper::-webkit-scrollbar { display: none; }
+    .reviews-swiper .swiper-slide {
+      width: 86%;
+      height: 400px;
+      opacity: 0.5;
+      transform: scale(0.9);
+      filter: blur(4px);
+      transition: opacity 500ms ease, transform 500ms ease, filter 500ms ease;
+    }
+    .reviews-swiper .swiper-slide blockquote p {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 8;
+      overflow: hidden;
+    }
+    .reviews-swiper .swiper-slide-active {
+      opacity: 1;
+      transform: scale(1);
+      filter: blur(0);
+      box-shadow: 0 24px 60px -28px rgba(11, 18, 32, 0.28);
+    }
+    @media (min-width: 640px) {
+      .reviews-swiper .swiper-slide { height: 440px; }
+      .reviews-swiper .swiper-slide blockquote p { -webkit-line-clamp: 9; }
+    }
+    @media (min-width: 768px) { .reviews-swiper .swiper-slide { width: 46%; } }
+    @media (min-width: 1024px) { .reviews-swiper .swiper-slide { width: calc((100% - 48px) / 3); } }
+
+    .hero-word { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.12em; margin-bottom: -0.12em; }
+    .hero-word-inner { display: inline-block; will-change: transform; }
+
+    .hero-btn { position: relative; isolation: isolate; overflow: hidden; transition: transform 350ms ease, box-shadow 350ms ease, background-color 350ms ease, border-color 350ms ease; }
+    .hero-btn:hover { transform: translateY(-2px); }
+    .hero-btn:active { transform: translateY(0) scale(0.99); }
+    .hero-btn-primary::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      background: linear-gradient(110deg, transparent 25%, rgba(255, 255, 255, 0.55) 50%, transparent 75%);
+      transform: translateX(-130%);
+      transition: transform 750ms ease;
+    }
+    .hero-btn-primary:hover { box-shadow: 0 18px 36px -16px rgba(201, 169, 107, 0.65); }
+    .hero-btn-primary:hover::after { transform: translateX(130%); }
+    .hero-arrow, .hero-phone-icon { transition: transform 350ms ease; }
+    .hero-btn-primary:hover .hero-arrow { transform: translateX(3px); }
+    .hero-btn-secondary:hover .hero-phone-icon { transform: rotate(-9deg) scale(1.08); }
+
+    @keyframes hero-fade-up {
+      from { opacity: 0; transform: translateY(18px); filter: blur(6px); }
+      to { opacity: 1; transform: translateY(0); filter: blur(0); }
+    }
+    @keyframes hero-word-in {
+      from { opacity: 0; transform: translateY(110%); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes hero-shimmer {
+      from { background-position: 200% center; }
+      to { background-position: -100% center; }
+    }
+    @keyframes hero-star-pop {
+      0% { opacity: 0; transform: scale(0.4) rotate(-15deg); }
+      70% { transform: scale(1.15) rotate(3deg); }
+      100% { opacity: 1; transform: scale(1) rotate(0); }
+    }
+    @keyframes hero-line-grow {
+      from { transform: scaleX(0); }
+      to { transform: scaleX(1); }
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .hero-reveal {
+        opacity: 0;
+        transform: translateY(18px);
+        filter: blur(6px);
+        animation: hero-fade-up 900ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        animation-delay: var(--d, 0ms);
+      }
+      .hero-word-inner {
+        opacity: 0;
+        transform: translateY(110%);
+        animation: hero-word-in 900ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        animation-delay: var(--d, 0ms);
+      }
+      .hero-shimmer {
+        background: linear-gradient(100deg, #C9A96B 18%, #F2E3BD 36%, #C9A96B 54%, #E6D3A8 72%, #C9A96B 90%);
+        background-size: 220% auto;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: hero-word-in 900ms cubic-bezier(0.22, 1, 0.36, 1) forwards, hero-shimmer 7s linear 1.4s infinite;
+        animation-delay: var(--d, 0ms), 1.4s;
+      }
+      .hero-stars svg {
+        opacity: 0;
+        transform: scale(0.4) rotate(-15deg);
+        animation: hero-star-pop 550ms cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+      }
+      .hero-stars svg:nth-child(1) { animation-delay: 1050ms; }
+      .hero-stars svg:nth-child(2) { animation-delay: 1120ms; }
+      .hero-stars svg:nth-child(3) { animation-delay: 1190ms; }
+      .hero-stars svg:nth-child(4) { animation-delay: 1260ms; }
+      .hero-stars svg:nth-child(5) { animation-delay: 1330ms; }
+      .hero-line { transform-origin: left; animation: hero-line-grow 800ms cubic-bezier(0.22, 1, 0.36, 1) 150ms forwards; }
+    }
+
+    @media (max-width: 1023.98px) {
+      .mobile-menu {
+        display: grid;
+        grid-template-rows: 0fr;
+        opacity: 0;
+        visibility: hidden;
+        transition: grid-template-rows 300ms cubic-bezier(0.4, 0, 0.2, 1), opacity 260ms ease, visibility 0s linear 300ms;
+      }
+      .mobile-menu.is-open {
+        grid-template-rows: 1fr;
+        opacity: 1;
+        visibility: visible;
+        transition: grid-template-rows 300ms cubic-bezier(0.4, 0, 0.2, 1), opacity 260ms ease, visibility 0s;
+      }
+      .mobile-menu > div { min-height: 0; overflow: hidden; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+      .reviews-swiper .swiper-slide { opacity: 1; transform: none; filter: none; }
+      .mobile-menu { transition: none; }
+      .hero-btn:hover, .hero-btn:active { transform: none; }
+      .hero-btn-primary::after { display: none; }
+      .hero-shimmer { -webkit-text-fill-color: currentColor; background: none; }
+    }
+  </style>
+  <noscript>
+    <style>
+      [data-reveal] { opacity: 1 !important; transform: none !important; }
+      .reviews-swiper { overflow: visible; }
+      .reviews-swiper .swiper-wrapper { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+      .reviews-swiper .swiper-slide { width: 100% !important; opacity: 1 !important; transform: none !important; filter: none !important; }
+    </style>
+  </noscript>
+</head>
+
+<body class="bg-white font-sans text-slate-900 antialiased">
+
+  <span class="hidden opacity-100 translate-y-0" aria-hidden="true"></span>
+
+  <svg xmlns="http://www.w3.org/2000/svg" class="hidden" aria-hidden="true">
+    <symbol id="icon-star" viewBox="0 0 20 20"><path fill="currentColor" d="M10 1.5l2.6 5.27 5.82.85-4.21 4.1.99 5.79L10 14.78l-5.2 2.73.99-5.79L1.58 7.62l5.82-.85L10 1.5z"/></symbol>
+    <symbol id="icon-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+    <symbol id="icon-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m5 12 4.5 4.5L19 7"/></symbol>
+    <symbol id="icon-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="M4.5 5.5a2 2 0 0 1 2-2h1.3a1.5 1.5 0 0 1 1.45 1.12l.7 2.8a1.5 1.5 0 0 1-.42 1.47l-1.03 1a13.4 13.4 0 0 0 5.62 5.62l1-1.03a1.5 1.5 0 0 1 1.47-.42l2.8.7A1.5 1.5 0 0 1 20.5 16.2v1.3a2 2 0 0 1-2 2C10.4 19.5 4.5 13.6 4.5 5.5Z"/></symbol>
+    <symbol id="icon-mail" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="M3.5 6.5h17v11h-17v-11Zm0 0 8.5 6.5 8.5-6.5"/></symbol>
+    <symbol id="icon-instagram" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor"/></symbol>
+    <symbol id="icon-menu" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="icon-close" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="m6 6 12 12M18 6 6 18"/></symbol>
+    <symbol id="icon-chevron" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="m6 9 6 6 6-6"/></symbol>
+    <symbol id="icon-pin" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="M12 21s7-6 7-11a7 7 0 1 0-14 0c0 5 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5" fill="none" stroke="currentColor" stroke-width="1.7"/></symbol>
+  </svg>
+
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-full focus:bg-gold focus:px-5 focus:py-3 focus:text-sm focus:font-semibold focus:text-ink">
+    Skip to content
+  </a>
+
+  <header id="top" class="sticky top-0 z-50 border-b border-white/10 bg-ink/90 backdrop-blur-md">
+    <div class="mx-auto max-w-7xl px-5 lg:px-8">
+      <div class="flex h-20 items-center justify-between gap-6">
+        <a href="index.html" class="flex items-center" aria-label="ZM Home Improvements home">
+          <img src="./assets/unnamed.png" alt="" width="108" height="108" class="h-14 w-14 shrink-0 sm:h-16 sm:w-16">
+        </a>
+
+        <nav class="hidden items-center gap-6 lg:flex" aria-label="Main">
+          <a href="index.html" class="text-sm font-medium text-white/75 transition hover:text-white">Home</a>
+          <a href="services.html" class="text-sm font-medium text-white/75 transition hover:text-white">Services</a>
+          <a href="portfolio.html" class="text-sm font-medium text-white/75 transition hover:text-white">Portfolio</a>
+          <a href="about.html" class="text-sm font-medium text-white/75 transition hover:text-white">About Us</a>
+          <a href="contact.html" class="text-sm font-medium text-white/75 transition hover:text-white">Contact</a>
+        </nav>
+
+        <div class="flex items-center gap-3">
+          <a href="contact.html#contact-form" class="inline-flex items-center gap-2 rounded-full bg-gold px-5 py-3 text-sm font-semibold text-ink transition hover:bg-gold-light focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold">
+            Get a Quote
+          </a>
+          <button id="menu-toggle" type="button" class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/15 text-white transition hover:bg-white/10 lg:hidden" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+            <svg id="icon-menu-open" class="h-5 w-5" aria-hidden="true"><use href="#icon-menu"/></svg>
+            <svg id="icon-menu-close" class="hidden h-5 w-5" aria-hidden="true"><use href="#icon-close"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="mobile-menu lg:hidden" aria-hidden="true" inert>
+      <div>
+        <div class="border-t border-white/10 bg-ink px-5 pb-6 pt-3">
+          <nav class="flex flex-col gap-1" aria-label="Mobile">
+            <a href="index.html" class="rounded-lg px-3 py-3 text-base font-medium text-white/80 transition hover:bg-white/5 hover:text-white">Home</a>
+            <a href="services.html" class="rounded-lg px-3 py-3 text-base font-medium text-white/80 transition hover:bg-white/5 hover:text-white">Services</a>
+            <a href="portfolio.html" class="rounded-lg px-3 py-3 text-base font-medium text-white/80 transition hover:bg-white/5 hover:text-white">Portfolio</a>
+            <a href="about.html" class="rounded-lg px-3 py-3 text-base font-medium text-white/80 transition hover:bg-white/5 hover:text-white">About Us</a>
+            <a href="contact.html" class="rounded-lg px-3 py-3 text-base font-medium text-white/80 transition hover:bg-white/5 hover:text-white">Contact</a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="bg-ink pb-20 md:pb-0">
+
+    <section class="relative isolate overflow-hidden bg-ink text-white">
+      <img src="./assets/hero.jpg" alt="Remodeled Austin kitchen with white cabinetry, quartz countertops, and stainless steel appliances" width="1179" height="784" fetchpriority="high" class="absolute inset-0 -z-10 h-full w-full object-cover object-center">
+      <div class="absolute inset-0 -z-10 bg-gradient-to-r from-ink via-ink/90 to-ink/35"></div>
+      <div class="absolute inset-0 -z-10 bg-gradient-to-t from-ink via-ink/10 to-ink/30"></div>
+
+      <div class="mx-auto max-w-7xl px-5 py-28 sm:py-36 lg:px-8 lg:py-44">
+        <div class="max-w-3xl">
+          <h1 class="font-display text-4xl font-light leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-6xl">
+            <span class="hero-word"><span class="hero-word-inner text-gold" style="--d: 160ms">ZM</span></span>
+            <span class="hero-word"><span class="hero-word-inner" style="--d: 240ms">Home</span></span>
+            <span class="hero-word"><span class="hero-word-inner" style="--d: 320ms">Improvements</span></span>
+          </h1>
+
+          <p class="hero-reveal mt-6 max-w-xl text-base leading-7 text-white/75 sm:text-lg" style="--d: 440ms">
+            Top-Rated Kitchen &amp; Bath Remodeling in Austin, TX
+          </p>
+
+          <div class="hero-reveal mt-8 flex flex-col gap-3 sm:flex-row sm:items-center" style="--d: 560ms">
+            <a href="#quote" class="hero-btn hero-btn-primary inline-flex items-center justify-center gap-2 rounded-full bg-gold px-8 py-4 text-sm font-semibold text-ink hover:bg-gold-light focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold">
+              Get a Quote
+              <svg class="hero-arrow h-4 w-4" aria-hidden="true"><use href="#icon-arrow"/></svg>
+            </a>
+            <a href="tel:+15125601400" class="hero-btn hero-btn-secondary inline-flex items-center justify-center gap-2 rounded-full border border-white/25 px-7 py-4 text-sm font-semibold text-white hover:border-white/50 hover:bg-white/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
+              <svg class="hero-phone-icon h-4 w-4 text-gold" aria-hidden="true"><use href="#icon-phone"/></svg>
+              Call (512) 560-1400
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="scroll-mt-24 bg-white py-28 sm:py-32 lg:py-40">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+        <div data-reveal class="opacity-0 translate-y-8 transition-all duration-700 ease-out">
+          <h2 class="max-w-2xl font-display text-3xl font-light tracking-tight text-ink sm:text-4xl lg:text-5xl">
+            Our Remodeling Services
+          </h2>
+        </div>
+
+        <div class="mt-20 grid gap-12 md:grid-cols-3 md:gap-10">
+          <article data-reveal class="group flex flex-col opacity-0 translate-y-8 transition-all duration-700 ease-out">
+            <div class="overflow-hidden rounded-2xl bg-slate-100">
+              <img src="./assets/kitchen.jpg" alt="White shaker kitchen remodel with quartz countertops, tile backsplash, and stainless appliances" width="1179" height="733" loading="lazy" class="aspect-[4/3] w-full object-cover transition duration-700 ease-out group-hover:scale-[1.03]">
+            </div>
+            <h3 class="mt-6 font-display text-2xl font-normal text-ink">Kitchen Remodeling in Austin</h3>
+            <p class="mt-3 flex-1 line-clamp-2 text-[15px] leading-7 text-slate-600">
+              Custom cabinetry, quartz counters, and tilework planned for daily life.
+            </p>
+            <a href="#quote" class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-ink transition hover:text-gold-dark">
+              Request a kitchen quote
+              <svg class="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true"><use href="#icon-arrow"/></svg>
+            </a>
+          </article>
+
+          <article data-reveal class="group flex flex-col opacity-0 translate-y-8 transition-all duration-700 delay-100 ease-out">
+            <div class="overflow-hidden rounded-2xl bg-slate-100">
+              <img src="./assets/bathroom.jpg" alt="Renovated bathroom with a freestanding soaking tub and patterned tile accent wall" width="1600" height="2133" loading="lazy" class="aspect-[4/3] w-full object-cover object-center transition duration-700 ease-out group-hover:scale-[1.03]">
+            </div>
+            <h3 class="mt-6 font-display text-2xl font-normal text-ink">Bathroom Remodeling in Austin</h3>
+            <p class="mt-3 flex-1 line-clamp-2 text-[15px] leading-7 text-slate-600">
+              Walk-in showers, freestanding tubs, vanities, and expert tile work.
+            </p>
+            <a href="#quote" class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-ink transition hover:text-gold-dark">
+              Request a bathroom quote
+              <svg class="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true"><use href="#icon-arrow"/></svg>
+            </a>
+          </article>
+
+          <article data-reveal class="group flex flex-col opacity-0 translate-y-8 transition-all duration-700 delay-200 ease-out">
+            <div class="overflow-hidden rounded-2xl bg-slate-100">
+              <img src="./assets/addition.jpg" alt="Open living room addition with hardwood floors, large windows, and a corner fireplace" width="1600" height="900" loading="lazy" class="aspect-[4/3] w-full object-cover object-center transition duration-700 ease-out group-hover:scale-[1.03]">
+            </div>
+            <h3 class="mt-6 font-display text-2xl font-normal text-ink">Custom Home Additions in Austin</h3>
+            <p class="mt-3 flex-1 line-clamp-2 text-[15px] leading-7 text-slate-600">
+              Carports, studios, and living-space additions built for your home.
+            </p>
+            <a href="#quote" class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-ink transition hover:text-gold-dark">
+              Plan your addition
+              <svg class="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true"><use href="#icon-arrow"/></svg>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="reviews" class="scroll-mt-24 bg-mist py-28 sm:py-32 lg:py-40">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+        <div data-reveal class="grid gap-10 opacity-0 translate-y-8 transition-all duration-700 ease-out lg:grid-cols-[1.2fr_1fr] lg:items-end">
+          <div>
+            <h2 class="font-display text-3xl font-light tracking-tight text-ink sm:text-4xl lg:text-5xl">
+              Client Reviews &amp; Testimonials
+            </h2>
+          </div>
+
+          <div class="lg:justify-self-end">
+            <div class="inline-flex items-center gap-4 rounded-2xl bg-white px-5 py-4 shadow-sm">
+              <span class="font-display text-4xl text-ink">5.0</span>
+              <div>
+                <span class="flex gap-0.5 text-gold" role="img" aria-label="5 out of 5 stars">
+                  <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-star"/></svg>
+                  <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-star"/></svg>
+                  <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-star"/></svg>
+                  <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-star"/></svg>
+                  <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-star"/></svg>
+                </span>
+                <p class="mt-1 text-xs font-medium uppercase tracking-[0.14em] text-slate-500">40+ Google reviews</p>
+              </div>
+            </div>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=ZM+Home+Improvements+Austin+TX" target="_blank" rel="noopener noreferrer" class="mt-3 flex items-center gap-2 text-sm font-semibold text-ink underline decoration-gold decoration-2 underline-offset-4 transition hover:text-gold-dark">
+              See all reviews on Google
+              <svg class="h-3.5 w-3.5" aria-hidden="true"><use href="#icon-arrow"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div data-reveal class="mt-20 opacity-0 translate-y-8 transition-all duration-700 ease-out">
+          <div class="swiper reviews-swiper" aria-label="Customer reviews">
+            <div class="swiper-wrapper">
+          <article class="swiper-slide flex flex-col rounded-2xl bg-white p-6 shadow-sm sm:p-7">
+            <div class="flex items-start justify-between gap-4">
+              <span class="flex gap-0.5 text-gold" role="img" aria-label="5 out of 5 stars">
+                <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-star"/></svg>
+                <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-star"/></svg>
+                <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-star"/></svg>
+                <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-star"/></svg>
+                <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-star"/></svg>
+              </span>
+              <span class="text-xs text-slate-500">6 months ago</span>
+            </div>
+            <blockquote class="mt-4 flex-1 text-[15px] leading-7 text-slate-600">
+              <p>We updated our kitchen and primary bathroom with Zeev and his crew and we were very happy with the final product! Zeev always arrived with a smile and a positive out look. He&rsquo;s very communicative and everything was done at a fair price. He and his crew go the extra mile!</p>
+            </blockquote>
+            <footer class="mt-6 flex items-center gap-3">
+              <span class="flex h-10 w-10 items-center justify-center rounded-full bg-ink font-display text-sm text-gold" aria-hidden="true">R</span>
+              <div>
+                <p class="text-sm font-semibold text-ink">Raine Maggio</p>
+                <p class="text-xs text-slate-500">Google review</p>
+              </div>
+            </footer>
+          </article>
+
+          <article class="swiper-slide flex flex-col rounded-2xl bg-white p-6 shadow-sm sm:p-7">
+            <div class="flex items-start justify-between gap-4">
+              <span class="flex gap-0.5 text-gold" role="img" aria-label="5 out of 5 stars">
+                <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-star"/></svg>
+                <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-star"/></svg>
+                <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-star"/></svg>
+                <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-star"/></svg>
+                <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-star"/></svg>
+              </span>
+              <span class="text-xs text-slate-500">9 months ago</span>
+            </div>
+            <blockquote class="mt-4 flex-1 text-[15px] leading-7 text-slate-600">
+              <p>We cannot recommend Zeev highly enough. From the very beginning, he was extremely communicative and truly helped bring our creative vision to life. We shared a variety of inspiration screenshots, and he came prepared with samples, thoughtful feedback, and design ideas we never would have considered on our own. Zeev was professional, reliable, and transparent throughout the entire project, clearly communicating timelines and any delays along the way. When challenges came up (especially with our older plumbing and subcontractor scheduling) he stepped in himself to keep things moving, which really set him apart from other contractors we&rsquo;ve worked with. He was always friendly, approachable, and patient, and never hesitated to brainstorm or answer questions. Our bathroom turned out absolutely beautiful and feels like a true work of art. We&rsquo;ve received so many compliments already, and it&rsquo;s clear Zeev went above and beyond to make sure we were completely satisfied. We would absolutely work with him again and highly recommend him.</p>
+            </blockquote>
+            <footer class="mt-6 flex items-center gap-3">
+              <span class="flex h-10 w-10 items-center justify-center rounded-full bg-ink font-display text-sm text-gold" aria-hidden="true">M</span>
+              <div>
+                <p class="text-sm font-semibold text-ink">Madison Brundick</p>
+                <p class="text-xs text-slate-500">Google review</p>
+              </div>
+            </footer>
+          </article>
+
+          <article class="swiper-slide flex flex-col rounded-2xl bg-white p-6 shadow-sm sm:p-7">
+            <div class="flex items-start justify-between gap-4">
+              <span class="flex gap-0.5 text-gold" role="img" aria-label="5 out of 5 stars">
+                <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-star"/></svg>
+                <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-star"/></svg>
+                <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-star"/></svg>
+                <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-star"/></svg>
+                <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-star"/></svg>
+              </span>
+              <span class="text-xs text-slate-500">a year ago</span>
+            </div>
+            <blockquote class="mt-4 flex-1 text-[15px] leading-7 text-slate-600">
+              <p>This was our first home purchase and our first renovation experience for my wife and me and we are glad to have shared it with Zeev and his team. We had almost all of our flooring redone to a beautiful cream-colored tile and an engineered hardwood with a gorgeous color. Our old master tub/shower was transformed to a sauna-like walk-in shower and is easily the best piece in the house! Zeev's team also did a great job repainting our kitchen, adding a backsplash, and installing our new sink and vent hood. A special thank you to Brian and Keith for the particularly difficult installation of the wood flooring that we chose, as well as to Zeev himself who continuously worked with us throughout the process and listened to all of our requests!</p>
+            </blockquote>
+            <footer class="mt-6 flex items-center gap-3">
+              <span class="flex h-10 w-10 items-center justify-center rounded-full bg-ink font-display text-sm text-gold" aria-hidden="true">C</span>
+              <div>
+                <p class="text-sm font-semibold text-ink">Christian Poblete</p>
+                <p class="text-xs text-slate-500">Google review</p>
+              </div>
+            </footer>
+          </article>
+
+          <article class="swiper-slide flex flex-col rounded-2xl bg-white p-6 shadow-sm sm:p-7">
+            <div class="flex items-start justify-between gap-4">
+              <span class="flex gap-0.5 text-gold" role="img" aria-label="5 out of 5 stars">
+                <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-star"/></svg>
+                <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-star"/></svg>
+                <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-star"/></svg>
+                <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-star"/></svg>
+                <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-star"/></svg>
+              </span>
+              <span class="text-xs text-slate-500">5 years ago</span>
+            </div>
+            <blockquote class="mt-4 flex-1 text-[15px] leading-7 text-slate-600">
+              <p>Zeev did a wonderful job remodeling our bathroom. He is extremely conscientious and attentive to details. He hires skilled subcontractors and keeps on them to make sure they do a good job. He was always available and responsive when we contacted him so we always knew where things stood. I can't recommend him highly enough!</p>
+            </blockquote>
+            <footer class="mt-6 flex items-center gap-3">
+              <span class="flex h-10 w-10 items-center justify-center rounded-full bg-ink font-display text-sm text-gold" aria-hidden="true">E</span>
+              <div>
+                <p class="text-sm font-semibold text-ink">Elizabeth Mueller</p>
+                <p class="text-xs text-slate-500">Google review</p>
+              </div>
+            </footer>
+          </article>
+
+          <article class="swiper-slide flex flex-col rounded-2xl bg-white p-6 shadow-sm sm:p-7">
+            <div class="flex items-start justify-between gap-4">
+              <span class="flex gap-0.5 text-gold" role="img" aria-label="5 out of 5 stars">
+                <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-star"/></svg>
+                <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-star"/></svg>
+                <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-star"/></svg>
+                <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-star"/></svg>
+                <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-star"/></svg>
+              </span>
+              <span class="text-xs text-slate-500">a year ago</span>
+            </div>
+            <blockquote class="mt-4 flex-1 text-[15px] leading-7 text-slate-600">
+              <p>I had a backsplash installed in my kitchen and I couldn&rsquo;t have had a better experience. Zeev and his team were punctual and transparent throughout the entire process. They were meticulous and clearly take pride in the work they do.</p>
+            </blockquote>
+            <footer class="mt-6 flex items-center gap-3">
+              <span class="flex h-10 w-10 items-center justify-center rounded-full bg-ink font-display text-sm text-gold" aria-hidden="true">B</span>
+              <div>
+                <p class="text-sm font-semibold text-ink">Brett Stoltenberg</p>
+                <p class="text-xs text-slate-500">Google review</p>
+              </div>
+            </footer>
+          </article>
+
+          <article class="swiper-slide flex flex-col rounded-2xl bg-white p-6 shadow-sm sm:p-7">
+            <div class="flex items-start justify-between gap-4">
+              <span class="flex gap-0.5 text-gold" role="img" aria-label="5 out of 5 stars">
+                <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-star"/></svg>
+                <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-star"/></svg>
+                <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-star"/></svg>
+                <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-star"/></svg>
+                <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-star"/></svg>
+              </span>
+              <span class="text-xs text-slate-500">4 years ago</span>
+            </div>
+            <blockquote class="mt-4 flex-1 text-[15px] leading-7 text-slate-600">
+              <p>Zeev orchestrated a beautiful kitchen redo for our rental home. We began with smaller projects but realized quickly that his bids are fair, his work is timely and of high quality, and a real bonus is he a super guy. So it was a easy decision to hire him for the kitchen redo. He listened to our ideas, understood our objectives, had great instincts, and made practical (not costly) suggestions to improve the project. He is easy to contact and gives updates regularly. He wanted us to be perfectly happy with the project and he delivered. We will be moving ahead with other projects with him and highly recommend him.</p>
+            </blockquote>
+            <footer class="mt-6 flex items-center gap-3">
+              <span class="flex h-10 w-10 items-center justify-center rounded-full bg-ink font-display text-sm text-gold" aria-hidden="true">C</span>
+              <div>
+                <p class="text-sm font-semibold text-ink">Cheryl Bradford</p>
+                <p class="text-xs text-slate-500">Google review</p>
+              </div>
+            </footer>
+          </article>
+
+          <article class="swiper-slide flex flex-col rounded-2xl bg-white p-6 shadow-sm sm:p-7">
+            <div class="flex items-start justify-between gap-4">
+              <span class="flex gap-0.5 text-gold" role="img" aria-label="5 out of 5 stars">
+                <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-star"/></svg>
+                <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-star"/></svg>
+                <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-star"/></svg>
+                <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-star"/></svg>
+                <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-star"/></svg>
+              </span>
+              <span class="text-xs text-slate-500">a week ago</span>
+            </div>
+            <blockquote class="mt-4 flex-1 text-[15px] leading-7 text-slate-600">
+              <p>Zeev and his crew are awesome! They were all very polite and professional and left the property clean! They built an amazing building 16 x 20 to be used for a studio and music space. I would definitely recommend this company!</p>
+            </blockquote>
+            <footer class="mt-6 flex items-center gap-3">
+              <span class="flex h-10 w-10 items-center justify-center rounded-full bg-ink font-display text-sm text-gold" aria-hidden="true">R</span>
+              <div>
+                <p class="text-sm font-semibold text-ink">Rita S</p>
+                <p class="text-xs text-slate-500">Google review</p>
+              </div>
+            </footer>
+          </article>
+            </div>
+          </div>
+        </div>
+
+        <p class="mt-8 text-center text-xs text-slate-500">
+          Reviews sourced from Google Maps, November 2026.
+        </p>
+      </div>
+    </section>
+
+    <section id="quote" class="scroll-mt-24 bg-ink py-28 text-white sm:py-32 lg:py-40">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+        <div class="grid gap-16 lg:grid-cols-2 lg:items-start lg:gap-24">
+          <div data-reveal class="opacity-0 translate-y-8 transition-all duration-700 ease-out">
+            <h2 class="font-display text-3xl font-light tracking-tight sm:text-4xl lg:text-5xl">
+              Request a Free Remodeling Quote in Austin
+            </h2>
+            <p class="mt-5 max-w-lg text-base leading-7 text-white/70">
+              Tell us about your project and we&rsquo;ll reply within one business day with a free estimate.
+            </p>
+
+            <div class="mt-9 space-y-5">
+              <a href="tel:+15125601400" class="group flex items-center gap-4">
+                <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white/5 text-gold ring-1 ring-white/10 transition group-hover:bg-white/10">
+                  <svg class="h-5 w-5" aria-hidden="true"><use href="#icon-phone"/></svg>
+                </span>
+                <span>
+                  <span class="block text-[11px] uppercase tracking-[0.18em] text-white/40">Call or text</span>
+                  <span class="mt-1 block text-lg font-semibold text-white">(512) 560-1400</span>
+                </span>
+              </a>
+              <a href="mailto:zmsocialmediamarketing26@gmail.com" class="group flex items-center gap-4">
+                <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white/5 text-gold ring-1 ring-white/10 transition group-hover:bg-white/10">
+                  <svg class="h-5 w-5" aria-hidden="true"><use href="#icon-mail"/></svg>
+                </span>
+                <span class="min-w-0">
+                  <span class="block text-[11px] uppercase tracking-[0.18em] text-white/40">Email</span>
+                  <span class="mt-1 block break-words text-sm font-semibold text-white">info@zmhomeimprovements.com</span>
+                </span>
+              </a>
+            </div>
+
+            <div class="mt-10 overflow-hidden rounded-2xl">
+              <iframe
+                src="https://www.google.com/maps?q=30.3347544,-97.720744&amp;z=12&amp;hl=en&amp;output=embed"
+                title="Google Map showing ZM Home Improvements serving Austin, Texas"
+                class="block h-64 w-full border-0 bg-white/5"
+                loading="eager"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen>
+              </iframe>
+            </div>
+            <p class="mt-3 text-xs">
+              <a href="https://www.google.com/maps/search/?api=1&amp;query=ZM+Home+Improvements+Austin+TX" target="_blank" rel="noopener noreferrer" class="font-semibold text-gold transition hover:text-gold-light">Open in Google Maps</a>
+            </p>
+          </div>
+
+          <div data-reveal class="rounded-3xl bg-white p-7 text-slate-900 opacity-0 translate-y-8 shadow-2xl shadow-black/20 transition-all duration-700 ease-out sm:p-9">
+            <h3 class="font-display text-2xl font-normal text-ink sm:text-3xl">Get a Free Quote</h3>
+
+            <form id="quote-form" class="mt-6 space-y-5" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+              <input type="hidden" name="_subject" value="New quote request from ZM Home Improvements website">
+              <div>
+                <label for="name" class="block text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Name</label>
+                <input id="name" name="name" type="text" autocomplete="name" required placeholder="First and last name" class="mt-2 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-[15px] text-slate-900 placeholder:text-slate-400 transition focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/30">
+              </div>
+
+              <div>
+                <label for="phone" class="block text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Phone</label>
+                <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required placeholder="(512) 555-0123" class="mt-2 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-[15px] text-slate-900 placeholder:text-slate-400 transition focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/30">
+              </div>
+
+              <div>
+                <label for="email" class="block text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Email</label>
+                <input id="email" name="email" type="email" autocomplete="email" required placeholder="you@email.com" class="mt-2 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-[15px] text-slate-900 placeholder:text-slate-400 transition focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/30">
+              </div>
+
+              <div>
+                <label for="service" class="block text-xs font-semibold uppercase tracking-[0.12em] text-slate-600">Service</label>
+                <div class="relative mt-2">
+                  <select id="service" name="service" required class="w-full appearance-none rounded-xl border border-slate-300 bg-white px-4 py-3 pr-11 text-[15px] text-slate-900 transition focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/30">
+                    <option value="" disabled selected>Select a service</option>
+                    <option value="kitchen">Kitchen remodeling</option>
+                    <option value="bathroom">Bathroom renovation</option>
+                    <option value="addition">Custom addition</option>
+                    <option value="whole-home">Whole-home remodel</option>
+                    <option value="other">Multiple projects / not sure</option>
+                  </select>
+                  <svg class="pointer-events-none absolute right-4 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-500" aria-hidden="true"><use href="#icon-chevron"/></svg>
+                </div>
+              </div>
+
+              <button id="quote-submit" type="submit" class="group flex w-full items-center justify-center gap-2 rounded-xl bg-gold px-6 py-4 text-sm font-semibold text-ink transition hover:bg-gold-light focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold disabled:cursor-not-allowed disabled:opacity-70">
+                <span id="quote-submit-label">Request My Free Quote</span>
+                <svg class="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true"><use href="#icon-arrow"/></svg>
+              </button>
+
+              <p class="text-center text-xs leading-5 text-slate-500">
+                We use your details only to respond to your request. No spam, ever.
+              </p>
+            </form>
+
+            <div id="form-error" class="hidden rounded-2xl border border-red-200 bg-red-50 p-4 text-sm leading-6 text-red-800" role="alert">
+              Something went wrong while sending your request. Please try again, or call
+              <a href="tel:+15125601400" class="font-semibold underline underline-offset-2">(512) 560-1400</a>.
+            </div>
+
+            <div id="form-success" class="hidden rounded-2xl border border-emerald-200 bg-emerald-50 p-6 text-emerald-900" role="status" aria-live="polite" tabindex="-1">
+              <div class="flex items-center gap-3">
+                <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-emerald-600 text-white">
+                  <svg class="h-5 w-5" aria-hidden="true"><use href="#icon-check"/></svg>
+                </span>
+                <h4 class="font-display text-xl">Thanks &mdash; your request is on its way.</h4>
+              </div>
+              <p class="mt-3 text-sm leading-6 text-emerald-800">We&rsquo;ll reach out within one business day to talk through your project and schedule a free estimate.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <nav class="fixed inset-x-0 bottom-0 z-50 border-t border-ink/10 bg-white/95 px-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] pt-3 shadow-[0_-8px_30px_-12px_rgba(11,18,32,0.25)] backdrop-blur md:hidden" aria-label="Quick contact">
+    <div class="mx-auto flex max-w-md gap-3">
+      <a href="tel:+15125601400" class="flex flex-1 items-center justify-center gap-2 rounded-xl border border-ink/15 bg-white px-4 py-3 text-sm font-semibold text-ink shadow-sm transition active:scale-[0.99]">
+        <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-phone"/></svg>
+        Call Now
+      </a>
+      <a href="contact.html#contact-form" class="flex flex-1 items-center justify-center gap-2 rounded-xl bg-gold px-4 py-3 text-sm font-semibold text-ink shadow-sm transition hover:bg-gold-light active:scale-[0.99]">
+        Get Quote
+        <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-arrow"/></svg>
+      </a>
+    </div>
+  </nav>
+
+  <footer class="bg-night text-white/60">
+    <div class="mx-auto max-w-7xl px-5 pt-16 pb-32 md:py-16 lg:px-8">
+      <div class="grid gap-12 md:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1.3fr]">
+        <div>
+          <a href="index.html" class="flex items-center gap-3" aria-label="ZM Home Improvements home">
+            <img src="./assets/unnamed.png" alt="" width="108" height="108" class="h-12 w-12 shrink-0">
+            <span class="leading-tight">
+              <span class="block font-display text-lg text-white">Home Improvements</span>
+              <span class="block text-[10px] uppercase tracking-[0.28em] text-white/50">Austin, Texas</span>
+            </span>
+          </a>
+          <p class="mt-5 max-w-xs text-sm leading-6">
+            Thoughtful kitchen and bathroom remodels, custom additions, and home improvements, built for Austin living.
+          </p>
+          <div class="mt-5 flex items-center gap-2">
+            <span class="flex gap-0.5 text-gold" role="img" aria-label="5 out of 5 stars">
+              <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-star"/></svg>
+              <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-star"/></svg>
+              <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-star"/></svg>
+              <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-star"/></svg>
+              <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-star"/></svg>
+            </span>
+            <span class="text-xs font-medium text-white/50">5.0 on Google &middot; 40+ reviews</span>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="text-xs font-semibold uppercase tracking-[0.2em] text-white/50">Explore</h2>
+          <ul class="mt-4 space-y-3 text-sm">
+            <li><a href="index.html" class="transition hover:text-white">Home</a></li>
+            <li><a href="services.html" class="transition hover:text-white">Services</a></li>
+            <li><a href="portfolio.html" class="transition hover:text-white">Portfolio</a></li>
+            <li><a href="about.html" class="transition hover:text-white">About Us</a></li>
+            <li><a href="contact.html" class="transition hover:text-white">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="text-xs font-semibold uppercase tracking-[0.2em] text-white/50">Services</h2>
+          <ul class="mt-4 space-y-3 text-sm">
+            <li><a href="services.html#kitchens" class="transition hover:text-white">Kitchen remodeling</a></li>
+            <li><a href="services.html#bathrooms" class="transition hover:text-white">Bathroom renovations</a></li>
+            <li><a href="services.html#additions" class="transition hover:text-white">Custom additions</a></li>
+            <li><a href="services.html" class="transition hover:text-white">Whole-home improvements</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="text-xs font-semibold uppercase tracking-[0.2em] text-white/50">Contact</h2>
+          <ul class="mt-4 space-y-3 text-sm">
+            <li>
+              <a href="tel:+15125601400" class="flex items-center gap-3 transition hover:text-white">
+                <svg class="h-4 w-4 shrink-0 text-gold" aria-hidden="true"><use href="#icon-phone"/></svg>
+                (512) 560-1400
+              </a>
+            </li>
+            <li>
+              <a href="mailto:zmsocialmediamarketing26@gmail.com" class="flex items-start gap-3 transition hover:text-white">
+                <svg class="mt-0.5 h-4 w-4 shrink-0 text-gold" aria-hidden="true"><use href="#icon-mail"/></svg>
+                <span>info@zmhomeimprovements.com</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/zm.clientshowcase/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 transition hover:text-white">
+                <svg class="h-4 w-4 shrink-0 text-gold" aria-hidden="true"><use href="#icon-instagram"/></svg>
+                @zm.clientshowcase
+              </a>
+            </li>
+            <li class="flex items-center gap-3">
+              <svg class="h-4 w-4 shrink-0 text-gold" aria-hidden="true"><use href="#icon-check"/></svg>
+              Austin, TX &amp; surrounding areas
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-12 flex flex-col gap-3 border-t border-white/10 pt-6 text-xs sm:flex-row sm:items-center sm:justify-between">
+        <p>&copy; <span id="year">2026</span> ZM Home Improvements LLC. All rights reserved.</p>
+        <p>Serving Austin and the surrounding communities.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuButton = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const openIcon = document.getElementById('icon-menu-open');
+    const closeIcon = document.getElementById('icon-menu-close');
+
+    function setMenu(open) {
+      menuButton.setAttribute('aria-expanded', String(open));
+      menuButton.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      mobileMenu.classList.toggle('is-open', open);
+      mobileMenu.setAttribute('aria-hidden', String(!open));
+      mobileMenu.toggleAttribute('inert', !open);
+      openIcon.classList.toggle('hidden', open);
+      closeIcon.classList.toggle('hidden', !open);
+    }
+
+    menuButton.addEventListener('click', () => {
+      setMenu(menuButton.getAttribute('aria-expanded') !== 'true');
+    });
+
+    mobileMenu.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => setMenu(false));
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && menuButton.getAttribute('aria-expanded') === 'true') {
+        setMenu(false);
+        menuButton.focus();
+      }
+    });
+
+    const form = document.getElementById('quote-form');
+    const success = document.getElementById('form-success');
+    const errorMessage = document.getElementById('form-error');
+    const submitButton = document.getElementById('quote-submit');
+    const submitLabel = document.getElementById('quote-submit-label');
+    const submitLabelDefault = submitLabel.textContent;
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      errorMessage.classList.add('hidden');
+      submitButton.disabled = true;
+      submitLabel.textContent = 'Sending…';
+
+      try {
+        const response = await fetch(form.action, {
+          method: form.method,
+          body: new FormData(form),
+          headers: { Accept: 'application/json' }
+        });
+        if (!response.ok) throw new Error('Form submission failed');
+        form.classList.add('hidden');
+        success.classList.remove('hidden');
+        success.focus();
+      } catch {
+        errorMessage.classList.remove('hidden');
+        submitButton.disabled = false;
+        submitLabel.textContent = submitLabelDefault;
+      }
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const revealItems = document.querySelectorAll('[data-reveal]');
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (revealItems.length) {
+      if ('IntersectionObserver' in window && !prefersReducedMotion) {
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.remove('opacity-0', 'translate-y-8');
+            entry.target.classList.add('opacity-100', 'translate-y-0');
+            observer.unobserve(entry.target);
+          });
+        }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+        revealItems.forEach((item) => revealObserver.observe(item));
+      } else {
+        revealItems.forEach((item) => {
+          item.classList.remove('opacity-0', 'translate-y-8');
+          item.classList.add('opacity-100', 'translate-y-0');
+        });
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof Swiper !== 'function') return;
+
+      const reviewsSwiper = new Swiper('.reviews-swiper', {
+        slidesPerView: 'auto',
+        centeredSlides: true,
+        spaceBetween: 24,
+        loop: true,
+        grabCursor: true,
+        speed: 600,
+        watchSlidesProgress: true,
+        slideToClickedSlide: true,
+        keyboard: { enabled: true, onlyInViewport: true },
+        autoplay: prefersReducedMotion ? false : {
+          delay: 4500,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true
+        },
+        a11y: {
+          enabled: true
+        },
+        breakpoints: {
+          0: { spaceBetween: 16 },
+          768: { spaceBetween: 20 },
+          1024: { spaceBetween: 24 }
+        }
+      });
+
+      if (reviewsSwiper.autoplay) {
+        reviewsSwiper.el.addEventListener('focusin', () => reviewsSwiper.autoplay.stop());
+        reviewsSwiper.el.addEventListener('focusout', () => {
+          if (!prefersReducedMotion) reviewsSwiper.autoplay.start();
+        });
+      }
+    });
+  </script>
+</body>
+</html>
