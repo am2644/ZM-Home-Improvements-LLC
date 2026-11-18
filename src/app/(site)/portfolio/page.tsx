@@ -7,11 +7,11 @@ import { prisma } from "@/lib/db";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Austin Remodeling Portfolio | ZM Home Improvements",
+  title: "Remodeling Projects in Austin, TX | ZM Home Improvements",
   description:
     "Recent kitchen, bathroom, and addition remodeling projects in Austin, TX by ZM Home Improvements.",
   openGraph: {
-    title: "Austin Remodeling Portfolio | ZM Home Improvements",
+    title: "Remodeling Projects in Austin, TX | ZM Home Improvements",
     description:
       "Recent kitchen, bathroom, and addition remodeling projects in Austin, TX by ZM Home Improvements.",
     images: ["/assets/hero.jpg"],
@@ -32,7 +32,7 @@ export default async function PortfolioPage() {
             className="hero-reveal max-w-4xl font-display text-4xl font-light tracking-tight sm:text-5xl lg:text-6xl"
             style={{ "--d": "120ms" } as CSSProperties}
           >
-            Our Portfolio
+            Our Work
           </h1>
           <p
             className="hero-reveal mt-5 max-w-2xl text-base leading-7 text-white/70 sm:text-lg"

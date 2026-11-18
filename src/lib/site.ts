@@ -12,7 +12,7 @@ export const MAP_EMBED_URL =
 export const NAV_LINKS = [
   { href: "/", label: "Home" },
   { href: "/services", label: "Services" },
-  { href: "/portfolio", label: "Portfolio" },
+  { href: "/portfolio", label: "Our Work" },
   { href: "/about", label: "About Us" },
   { href: "/contact", label: "Contact" },
 ] as const;
