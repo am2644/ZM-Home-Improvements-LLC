@@ -18,11 +18,17 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function PortfolioPage() {
+type PortfolioPageProps = {
+  searchParams: Promise<{ filter?: string | string[] }>;
+};
+
+export default async function PortfolioPage({ searchParams }: PortfolioPageProps) {
+  const { filter } = await searchParams;
   const items = await prisma.portfolioItem.findMany({
     orderBy: [{ createdAt: "desc" }, { id: "desc" }],
     select: { id: true, title: true, category: true, imageUrl: true },
   });
+  const initialFilter = typeof filter === "string" ? filter : undefined;
 
   return (
     <>
@@ -52,7 +58,7 @@ export default async function PortfolioPage() {
           </div>
 
           <div data-reveal className="opacity-0 translate-y-8 transition-all duration-700 ease-out">
-            <PortfolioGallery items={items} />
+            <PortfolioGallery items={items} initialFilter={initialFilter} />
           </div>
         </div>
       </section>

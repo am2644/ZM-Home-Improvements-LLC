@@ -19,13 +19,24 @@ const FILTERS = [
   { value: "additions", label: "Additions" },
 ];
 
-export default function PortfolioGallery({ items }: { items: GalleryItem[] }) {
-  const [filter, setFilter] = useState("all");
+export default function PortfolioGallery({
+  items,
+  initialFilter,
+}: {
+  items: GalleryItem[];
+  initialFilter?: string;
+}) {
+  const [filter, setFilter] = useState(
+    FILTERS.some((option) => option.value === initialFilter) && initialFilter
+      ? initialFilter
+      : "all",
+  );
 
   return (
     <>
       <div
-        className="mt-12 flex flex-wrap items-center gap-2"
+        id="work-gallery"
+        className="mt-12 flex scroll-mt-28 flex-wrap items-center gap-2"
         role="group"
         aria-label="Filter projects"
       >

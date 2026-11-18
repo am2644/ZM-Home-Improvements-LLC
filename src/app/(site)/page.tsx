@@ -1,5 +1,6 @@
 import type { CSSProperties } from "react";
 import type { Metadata } from "next";
+import Link from "next/link";
 import QuoteForm from "@/components/ui/QuoteForm";
 import ReviewsSwiper from "@/components/ui/ReviewsSwiper";
 import { INSTAGRAM_POSTS } from "@/lib/instagram";
@@ -114,18 +115,29 @@ export default function HomePage() {
               data-reveal
               className="group flex flex-col opacity-0 translate-y-8 transition-all duration-700 ease-out"
             >
-              <div className="overflow-hidden rounded-2xl bg-slate-100">
+              <Link
+                href="/portfolio?filter=kitchens#work-gallery"
+                className="group/image relative block overflow-hidden rounded-2xl bg-slate-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+              >
                 <img
-                  src="/assets/kitchen.jpg"
-                  alt="White shaker kitchen remodel with quartz countertops, tile backsplash, and stainless appliances"
-                  width="1179"
-                  height="733"
+                  src="/assets/work/crestview-kitchen.jpg"
+                  alt="White kitchen remodel with stone countertops, tiled backsplash, and stainless appliances in Austin"
+                  width="1400"
+                  height="1050"
                   loading="lazy"
-                  className="aspect-[4/3] w-full object-cover transition duration-700 ease-out group-hover:scale-[1.03]"
+                  className="aspect-[4/3] w-full object-cover transition duration-700 ease-out group-hover/image:scale-[1.03]"
                 />
-              </div>
+                <span className="absolute bottom-4 left-4 rounded-full bg-ink/80 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-white backdrop-blur-sm transition group-hover/image:bg-gold group-hover/image:text-ink">
+                  View kitchen projects
+                </span>
+              </Link>
               <h3 className="mt-6 font-display text-2xl font-normal text-ink">
-                Kitchen Remodeling in Austin
+                <Link
+                  href="/portfolio?filter=kitchens#work-gallery"
+                  className="transition hover:text-gold-dark"
+                >
+                  Kitchen Remodeling in Austin
+                </Link>
               </h3>
               <p className="mt-3 flex-1 line-clamp-2 text-[15px] leading-7 text-slate-600">
                 Custom cabinetry, quartz counters, and tilework planned for daily life.
@@ -145,18 +157,29 @@ export default function HomePage() {
               data-reveal
               className="group flex flex-col opacity-0 translate-y-8 transition-all duration-700 delay-100 ease-out"
             >
-              <div className="overflow-hidden rounded-2xl bg-slate-100">
+              <Link
+                href="/portfolio?filter=bathrooms#work-gallery"
+                className="group/image relative block overflow-hidden rounded-2xl bg-slate-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+              >
                 <img
-                  src="/assets/bathroom.jpg"
-                  alt="Renovated bathroom with a freestanding soaking tub and patterned tile accent wall"
-                  width="1600"
-                  height="2133"
+                  src="/assets/work/freestanding-tub.jpg"
+                  alt="Bathroom remodel with a freestanding soaking tub, double vanity, and tile floor in Austin"
+                  width="787"
+                  height="1400"
                   loading="lazy"
-                  className="aspect-[4/3] w-full object-cover object-center transition duration-700 ease-out group-hover:scale-[1.03]"
+                  className="aspect-[4/3] w-full object-cover object-center transition duration-700 ease-out group-hover/image:scale-[1.03]"
                 />
-              </div>
+                <span className="absolute bottom-4 left-4 rounded-full bg-ink/80 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-white backdrop-blur-sm transition group-hover/image:bg-gold group-hover/image:text-ink">
+                  View bathroom projects
+                </span>
+              </Link>
               <h3 className="mt-6 font-display text-2xl font-normal text-ink">
-                Bathroom Remodeling in Austin
+                <Link
+                  href="/portfolio?filter=bathrooms#work-gallery"
+                  className="transition hover:text-gold-dark"
+                >
+                  Bathroom Remodeling in Austin
+                </Link>
               </h3>
               <p className="mt-3 flex-1 line-clamp-2 text-[15px] leading-7 text-slate-600">
                 Walk-in showers, freestanding tubs, vanities, and expert tile work.
@@ -176,18 +199,29 @@ export default function HomePage() {
               data-reveal
               className="group flex flex-col opacity-0 translate-y-8 transition-all duration-700 delay-200 ease-out"
             >
-              <div className="overflow-hidden rounded-2xl bg-slate-100">
+              <Link
+                href="/portfolio?filter=additions#work-gallery"
+                className="group/image relative block overflow-hidden rounded-2xl bg-slate-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+              >
                 <img
-                  src="/assets/addition.jpg"
-                  alt="Open living room addition with hardwood floors, large windows, and a corner fireplace"
-                  width="1600"
-                  height="900"
+                  src="/assets/work/carport-patio.jpg"
+                  alt="Carport and covered patio addition with timber framing in Austin"
+                  width="1400"
+                  height="1050"
                   loading="lazy"
-                  className="aspect-[4/3] w-full object-cover object-center transition duration-700 ease-out group-hover:scale-[1.03]"
+                  className="aspect-[4/3] w-full object-cover object-center transition duration-700 ease-out group-hover/image:scale-[1.03]"
                 />
-              </div>
+                <span className="absolute bottom-4 left-4 rounded-full bg-ink/80 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-white backdrop-blur-sm transition group-hover/image:bg-gold group-hover/image:text-ink">
+                  View addition projects
+                </span>
+              </Link>
               <h3 className="mt-6 font-display text-2xl font-normal text-ink">
-                Custom Home Additions in Austin
+                <Link
+                  href="/portfolio?filter=additions#work-gallery"
+                  className="transition hover:text-gold-dark"
+                >
+                  Custom Home Additions in Austin
+                </Link>
               </h3>
               <p className="mt-3 flex-1 line-clamp-2 text-[15px] leading-7 text-slate-600">
                 Carports, studios, and living-space additions built for your home.
