@@ -7,6 +7,9 @@ const nextConfig: NextConfig = {
     },
   },
   serverExternalPackages: ["better-sqlite3"],
+  outputFileTracingIncludes: {
+    "/**/*": ["./prisma/dev.db"],
+  },
   turbopack: {
     rules: {
       "*.css": {
