@@ -13,7 +13,7 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-night text-white/60">
+    <footer className="footer-gradient bg-night text-white/60">
       <div className="mx-auto max-w-7xl px-5 pt-16 pb-32 md:py-16 lg:px-8">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1.3fr]">
           <div>

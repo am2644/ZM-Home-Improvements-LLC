@@ -16,6 +16,20 @@
   background: rgba(201, 169, 107, 0.35);
 }
 
+.section-gradient {
+  background-color: #0b1220;
+  background-image:
+    radial-gradient(70% 90% at 100% 0%, rgba(201, 169, 107, 0.14) 0%, rgba(201, 169, 107, 0) 55%),
+    linear-gradient(155deg, #0b1220 0%, #101b2f 48%, #070d17 100%);
+}
+
+.footer-gradient {
+  background-color: #070d17;
+  background-image:
+    radial-gradient(60% 80% at 0% 0%, rgba(201, 169, 107, 0.06) 0%, rgba(201, 169, 107, 0) 60%),
+    linear-gradient(180deg, #070d17 0%, #04080f 100%);
+}
+
 .reviews-swiper {
   overflow: hidden;
   padding: 0.25rem 0 1rem;

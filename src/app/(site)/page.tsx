@@ -29,7 +29,7 @@ const delay = (ms: number) => ({ "--d": `${ms}ms` }) as CSSProperties;
 export default function HomePage() {
   return (
     <>
-      <section className="relative isolate overflow-hidden bg-ink text-white">
+      <section className="relative isolate flex min-h-[55svh] items-center overflow-hidden bg-ink text-white">
         <img
           src="/assets/hero.jpg"
           alt="Remodeled Austin kitchen with white cabinetry, quartz countertops, and stainless steel appliances"
@@ -53,7 +53,7 @@ export default function HomePage() {
         <div className="absolute inset-0 -z-10 bg-gradient-to-r from-ink via-ink/90 to-ink/35" />
         <div className="absolute inset-0 -z-10 bg-gradient-to-t from-ink via-ink/10 to-ink/30" />
 
-        <div className="mx-auto max-w-7xl px-5 py-28 sm:py-36 lg:px-8 lg:py-44">
+        <div className="mx-auto w-full max-w-7xl px-5 py-28 sm:py-36 lg:px-8 lg:py-44">
           <div className="max-w-5xl">
             <h1 className="font-display text-4xl font-light leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-6xl xl:text-7xl">
               <span className="hero-word">
@@ -257,7 +257,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="quote" className="scroll-mt-24 bg-ink py-28 text-white sm:py-32 lg:py-40">
+      <section id="quote" className="section-gradient scroll-mt-24 py-28 text-white sm:py-32 lg:py-40">
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
           <div className="grid gap-16 lg:grid-cols-2 lg:items-start lg:gap-24">
             <div data-reveal className="opacity-0 translate-y-8 transition-all duration-700 ease-out">

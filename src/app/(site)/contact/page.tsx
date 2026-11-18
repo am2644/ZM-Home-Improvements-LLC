@@ -44,7 +44,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section id="contact-form" className="scroll-mt-24 bg-ink py-24 text-white sm:py-32 lg:py-40">
+      <section id="contact-form" className="section-gradient scroll-mt-24 py-24 text-white sm:py-32 lg:py-40">
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
           <div className="grid gap-16 lg:grid-cols-2 lg:items-start lg:gap-24">
             <div data-reveal className="opacity-0 translate-y-8 transition-all duration-700 ease-out">
