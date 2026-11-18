@@ -76,6 +76,10 @@
   will-change: transform;
 }
 
+.hero-video {
+  pointer-events: none;
+}
+
 .hero-btn {
   position: relative;
   isolation: isolate;
@@ -267,5 +271,8 @@
   .hero-shimmer {
     -webkit-text-fill-color: currentColor;
     background: none;
+  }
+  .hero-video {
+    display: none;
   }
 }

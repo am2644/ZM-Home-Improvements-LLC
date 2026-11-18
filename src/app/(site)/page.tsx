@@ -38,6 +38,18 @@ export default function HomePage() {
           fetchPriority="high"
           className="absolute inset-0 -z-10 h-full w-full object-cover object-center"
         />
+        <video
+          className="hero-video absolute inset-0 -z-10 h-full w-full object-cover object-center"
+          src="/assets/hero-video.mp4"
+          poster="/assets/hero-video-poster.jpg"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          aria-hidden="true"
+          tabIndex={-1}
+        />
         <div className="absolute inset-0 -z-10 bg-gradient-to-r from-ink via-ink/90 to-ink/35" />
         <div className="absolute inset-0 -z-10 bg-gradient-to-t from-ink via-ink/10 to-ink/30" />
 
