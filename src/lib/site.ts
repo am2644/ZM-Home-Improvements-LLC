@@ -13,6 +13,7 @@ export const NAV_LINKS = [
   { href: "/", label: "Home" },
   { href: "/services", label: "Services" },
   { href: "/portfolio", label: "Our Work" },
+  { href: "/blog", label: "Blog" },
   { href: "/about", label: "About Us" },
   { href: "/contact", label: "Contact" },
 ] as const;
@@ -38,13 +39,13 @@ export const PORTFOLIO_CATEGORY_LABELS: Record<string, string> = {
 };
 
 export const PROJECT_ASPECTS: Record<string, string> = {
-  "/assets/port-1.jpg": "aspect-[4/3]",
-  "/assets/port-2.jpg": "aspect-[4/5]",
-  "/assets/port-3.jpg": "aspect-[4/3]",
-  "/assets/port-4.jpg": "aspect-square",
-  "/assets/port-5.jpg": "aspect-[4/3]",
-  "/assets/port-6.jpg": "aspect-[4/5]",
-  "/assets/port-7.jpg": "aspect-[4/3]",
-  "/assets/port-8.jpg": "aspect-square",
-  "/assets/port-9.jpg": "aspect-[4/3]",
+  "/assets/work/crestview-kitchen.jpg": "aspect-[4/3]",
+  "/assets/work/spa-bath.jpg": "aspect-[4/5]",
+  "/assets/work/carport-patio.jpg": "aspect-[4/3]",
+  "/assets/work/blue-kitchen.jpg": "aspect-[4/5]",
+  "/assets/work/freestanding-tub.jpg": "aspect-[4/5]",
+  "/assets/work/closet-buildout.jpg": "aspect-square",
+  "/assets/work/rental-kitchen.jpg": "aspect-[4/3]",
+  "/assets/work/double-vanity.jpg": "aspect-[4/3]",
+  "/assets/work/powder-bath.jpg": "aspect-[4/5]",
 };
