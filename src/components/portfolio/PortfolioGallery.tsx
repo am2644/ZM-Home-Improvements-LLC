@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import FallbackImage from "@/components/ui/FallbackImage";
 import { PORTFOLIO_CATEGORY_LABELS, PROJECT_ASPECTS } from "@/lib/site";
 
@@ -56,7 +57,11 @@ export default function PortfolioGallery({ items }: { items: GalleryItem[] }) {
               key={item.id}
               className={`gallery-item mb-5 break-inside-avoid ${hidden ? "hidden" : ""}`}
             >
-              <div className={`group relative ${aspect} overflow-hidden rounded-2xl bg-ink`}>
+              <Link
+                href={`/portfolio/${item.id}`}
+                aria-label={`View ${item.title}`}
+                className={`group relative block ${aspect} overflow-hidden rounded-2xl bg-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold`}
+              >
                 <div
                   className="absolute inset-0 flex flex-col items-center justify-center gap-3"
                   aria-hidden="true"
@@ -80,13 +85,21 @@ export default function PortfolioGallery({ items }: { items: GalleryItem[] }) {
                   loading="lazy"
                   className="absolute inset-0 z-[1] h-full w-full object-cover transition duration-700 ease-out group-hover:scale-[1.03]"
                 />
-                <div className="absolute inset-x-0 bottom-0 z-[2] bg-gradient-to-t from-ink/95 via-ink/60 to-transparent p-5 pt-16">
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-gold">
-                    {categoryLabel}
-                  </p>
-                  <h3 className="mt-1 font-display text-xl text-white">{item.title}</h3>
+                <div className="absolute inset-x-0 bottom-0 z-[2] flex items-end justify-between gap-4 bg-gradient-to-t from-ink/95 via-ink/60 to-transparent p-5 pt-16">
+                  <div>
+                    <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-gold">
+                      {categoryLabel}
+                    </p>
+                    <h3 className="mt-1 font-display text-xl text-white">{item.title}</h3>
+                  </div>
+                  <span
+                    className="mb-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white/10 text-white opacity-100 transition sm:opacity-0 sm:group-hover:opacity-100"
+                    aria-hidden="true"
+                  >
+                    <svg className="h-4 w-4"><use href="#icon-arrow" /></svg>
+                  </span>
                 </div>
-              </div>
+              </Link>
             </figure>
           );
         })}
