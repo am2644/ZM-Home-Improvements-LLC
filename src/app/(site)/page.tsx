@@ -2,11 +2,13 @@ import type { CSSProperties } from "react";
 import type { Metadata } from "next";
 import QuoteForm from "@/components/ui/QuoteForm";
 import ReviewsSwiper from "@/components/ui/ReviewsSwiper";
+import { INSTAGRAM_POSTS } from "@/lib/instagram";
 import { REVIEWS } from "@/lib/reviews";
 import {
   EMAIL_DISPLAY,
   EMAIL_MAILTO,
   GOOGLE_REVIEWS_URL,
+  INSTAGRAM_URL,
   MAP_EMBED_URL,
   PHONE_DISPLAY,
   PHONE_HREF,
@@ -254,6 +256,103 @@ export default function HomePage() {
           <p className="mt-8 text-center text-xs text-slate-500">
             Reviews sourced from Google Maps, November 2026.
           </p>
+        </div>
+      </section>
+
+      <section id="instagram" className="scroll-mt-24 bg-white py-28 sm:py-32 lg:py-40">
+        <div className="mx-auto max-w-7xl px-5 lg:px-8">
+          <div
+            data-reveal
+            className="flex flex-col gap-8 opacity-0 translate-y-8 transition-all duration-700 ease-out xl:flex-row xl:items-end xl:justify-between"
+          >
+            <div className="max-w-2xl">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-gold-dark">
+                Instagram
+              </p>
+              <h2 className="mt-3 font-display text-3xl font-light tracking-tight text-ink sm:text-4xl lg:text-5xl">
+                Follow <span className="break-words">@zm.clientshowcase</span>
+              </h2>
+              <p className="mt-4 max-w-xl text-base leading-7 text-slate-600">
+                Recent projects, reels, and behind-the-scenes from Austin jobs.
+              </p>
+            </div>
+
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
+              <div className="flex items-center gap-3">
+                <img
+                  src="/assets/unnamed.png"
+                  alt=""
+                  width="108"
+                  height="108"
+                  className="h-12 w-12 rounded-full border border-ink/10"
+                />
+                <div>
+                  <p className="whitespace-nowrap text-sm font-semibold text-ink">
+                    ZM Home Improvements
+                  </p>
+                  <p className="whitespace-nowrap text-xs text-slate-500">
+                    @zm.clientshowcase · Austin, TX
+                  </p>
+                </div>
+              </div>
+              <a
+                href={INSTAGRAM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full bg-gold px-5 py-3 text-sm font-semibold text-ink transition hover:bg-gold-light focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+              >
+                <svg className="h-4 w-4" aria-hidden="true"><use href="#icon-instagram" /></svg>
+                Follow on Instagram
+              </a>
+            </div>
+          </div>
+
+          <div
+            data-reveal
+            className="mt-14 grid gap-5 opacity-0 translate-y-8 transition-all duration-700 delay-100 ease-out sm:grid-cols-2 lg:grid-cols-3"
+          >
+            {INSTAGRAM_POSTS.map((post) => (
+              <a
+                key={post.id}
+                href={post.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex flex-col overflow-hidden rounded-2xl border border-ink/10 bg-white shadow-sm transition duration-500 hover:-translate-y-1 hover:shadow-card focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+              >
+                <div className="relative aspect-square overflow-hidden bg-mist">
+                  <img
+                    src={post.image}
+                    alt={post.alt}
+                    width="800"
+                    height="800"
+                    loading="lazy"
+                    className="h-full w-full object-cover transition duration-700 ease-out group-hover:scale-[1.03]"
+                  />
+                  <span className="absolute left-4 top-4 rounded-full bg-ink/80 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-white backdrop-blur-sm">
+                    {post.type}
+                  </span>
+                  <span
+                    className="absolute bottom-4 right-4 flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-ink opacity-100 shadow-sm transition sm:opacity-0 sm:group-hover:opacity-100"
+                    aria-hidden="true"
+                  >
+                    <svg className="h-4 w-4"><use href="#icon-instagram" /></svg>
+                  </span>
+                </div>
+                <div className="flex flex-1 flex-col p-5">
+                  <p className="line-clamp-2 text-[15px] leading-7 text-slate-600">{post.caption}</p>
+                  <span className="mt-auto inline-flex items-center gap-2 pt-4 text-[11px] font-semibold uppercase tracking-[0.16em] text-gold-dark">
+                    View on Instagram
+                    <svg
+                      className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1"
+                      aria-hidden="true"
+                    >
+                      <use href="#icon-arrow" />
+                    </svg>
+                  </span>
+                </div>
+              </a>
+            ))}
+          </div>
         </div>
       </section>
 
