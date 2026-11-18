@@ -54,8 +54,8 @@ export default function HomePage() {
         <div className="absolute inset-0 -z-10 bg-gradient-to-t from-ink via-ink/10 to-ink/30" />
 
         <div className="mx-auto max-w-7xl px-5 py-28 sm:py-36 lg:px-8 lg:py-44">
-          <div className="max-w-3xl">
-            <h1 className="font-display text-4xl font-light leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-6xl">
+          <div className="max-w-5xl">
+            <h1 className="font-display text-4xl font-light leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-6xl xl:text-7xl">
               <span className="hero-word">
                 <span className="hero-word-inner text-gold" style={delay(160)}>ZM</span>
               </span>{" "}
