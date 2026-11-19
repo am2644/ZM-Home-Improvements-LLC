@@ -1,7 +1,6 @@
 import type { CSSProperties } from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
-import FallbackImage from "@/components/ui/FallbackImage";
 
 export const metadata: Metadata = {
   title: "About ZM Home Improvements | Austin, TX",
@@ -65,28 +64,13 @@ export default function AboutPage() {
               className="relative opacity-0 translate-y-8 transition-all duration-700 delay-100 ease-out"
             >
               <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] bg-ink">
-                <div
-                  className="absolute inset-0 flex flex-col items-center justify-center gap-3 text-center"
-                  aria-hidden="true"
-                >
-                  <img
-                    src="/assets/unnamed.png"
-                    alt=""
-                    width="108"
-                    height="108"
-                    className="h-16 w-16 opacity-90"
-                  />
-                  <span className="text-[10px] font-semibold uppercase tracking-[0.24em] text-white/40">
-                    Team photo
-                  </span>
-                </div>
-                <FallbackImage
-                  src="/assets/team.jpg"
+                <img
+                  src="/assets/zeev.jpg"
                   alt="Zeev Machluf, owner of ZM Home Improvements in Austin, Texas"
-                  width={1000}
-                  height={1250}
+                  width={825}
+                  height={1024}
                   loading="lazy"
-                  className="absolute inset-0 z-[1] h-full w-full object-cover"
+                  className="h-full w-full object-cover"
                 />
               </div>
               <figcaption className="mt-4 text-sm text-slate-500">
